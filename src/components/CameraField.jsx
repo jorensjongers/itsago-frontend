@@ -14,10 +14,7 @@ class CameraField extends React.Component {
 
     takePicture = () => {
         this.camera.capture()
-            .then(blob => {
-                console.log(blob);
-                this.props.action(blob);
-            })
+        .then(picture => {this.props.action(picture)});
     }
 }
 

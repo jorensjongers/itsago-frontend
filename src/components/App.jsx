@@ -11,9 +11,9 @@ class App extends React.Component {
       }; 
   }
 
-  uploadImage = e => {
+  uploadImage = (blob) => {
     this.setState({uploading: true});
-    // code to upload image
+    console.log(blob);
   }
 
   render() {
