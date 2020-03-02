@@ -9,11 +9,11 @@ class App extends React.Component {
       uploading: false,
       images: []
       }; 
-    this.submitImage = this.submitImage.bind(this);
   }
 
-  submitImage() {
-    this.setState({uploading: true})
+  uploadImage = e => {
+    this.setState({uploading: true});
+    // code to upload image
   }
 
   render() {
@@ -21,7 +21,7 @@ class App extends React.Component {
         if (this.state.uploading) {
           return <Loader type='Grid' />;
         } else {
-          return <Button txt='Upload image' action={this.submitImage} />;
+          return <Button txt='Upload image' action={this.uploadImage} />;
         };
       }
 
