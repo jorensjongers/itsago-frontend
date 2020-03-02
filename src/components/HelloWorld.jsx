@@ -1,10 +1,19 @@
 import React from 'react';
 
 class HelloWorld extends React.Component {
+  constructor() {
+    this.state = {image: {}}
+    
+  }
+
+  submitImage = () => {
+    //code to submit image to backend.
+  }
   render() {
     return (
-    <div className="hello-world">
-      <h1>Hello World!</h1>
+    <div>
+      <h1>Upload picture here</h1>
+      <button onClick={submitImage}> Submit picture </button>
     </div>
     );
   }
