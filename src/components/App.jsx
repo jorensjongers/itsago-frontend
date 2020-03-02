@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from 'react-loader-spinner'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends React.Component {
   render() {
     const content = () => {
         if (this.state.uploading) {
-          return <Spinner />;
+          return <Loader type='Grid' />;
         } else {
           return <button txt='Upload image' />;
         };
