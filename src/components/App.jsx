@@ -1,6 +1,6 @@
 import React from 'react';
 import Loader from 'react-loader-spinner'
-import Button from './Button.jsx'
+import CameraField from './CameraField.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends React.Component {
         if (this.state.uploading) {
           return <Loader type='Grid' />;
         } else {
-          return <Button txt='Upload image' action={this.uploadImage} />;
+          return <CameraField txt='Upload image' action={this.uploadImage} />;
         };
       }
 
