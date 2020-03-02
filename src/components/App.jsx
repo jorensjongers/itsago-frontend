@@ -2,6 +2,7 @@ import React from 'react';
 import Loader from 'react-loader-spinner'
 import CameraField from './CameraField.jsx';
 
+const API_URL = "http://localhost:5000"
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -11,9 +12,16 @@ class App extends React.Component {
       }; 
   }
 
-  uploadImage = (blob) => {
+  uploadImage = (picture) => {
     this.setState({uploading: true});
-    console.log(blob);
+    console.log(picture);
+    const formData = new FormData();
+    formData.append('file', picture, 'image.jpg');
+    fetch(API_URL + "/upload_image", {
+      method: 'POST',
+      body: formData
+    });
+    this.setState({uploading: false})
   }
 
   render() {
