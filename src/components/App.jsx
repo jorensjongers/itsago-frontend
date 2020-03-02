@@ -9,10 +9,11 @@ class App extends React.Component {
       uploading: false,
       images: []
       }; 
+    this.submitImage = this.submitImage.bind(this);
   }
 
   submitImage() {
-    alert('submitted');
+    this.setState({uploading: true})
   }
 
   render() {
