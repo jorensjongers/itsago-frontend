@@ -5,13 +5,48 @@ const API_URL = "http://localhost:5000";
 
 class CameraField extends React.Component {
     render() {
+        const style = {
+            container: {
+                width: 500,
+                height: 500
+            },
+            preview: {
+                position: 'relative',
+            },
+            captureContainer: {
+                display: 'flex',
+                position: 'absolute',
+                justifyContent: 'flex-start',
+                zIndex: 1,
+                bottom: 0,
+                width: '100'
+            },
+            captureButton: {
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                height: 56,
+                width: 56,
+                color: '#000',
+                margin: 20
+            }
+          }
+
         return (
-            <Camera ref={(cam) => {this.camera = cam;}}>
-                <Button txt='Take Picture' action={this.takePicture}/>
+          <div style={style.container}>
+            <Camera
+              style={style.preview}
+              ref={(cam) => {
+                this.camera = cam;
+              }}
+            >
+              <div style={style.captureContainer} onClick={this.takePicture}>
+                <div style={style.captureButton} />
+              </div>
             </Camera>
-    
-        )
-    }
+          </div>
+        );
+    }   
+
     uploadImage = (picture) => {
         this.props.onUpload(true);
         console.log(picture);
@@ -28,6 +63,6 @@ class CameraField extends React.Component {
         this.camera.capture()
         .then(picture => {this.uploadImage(picture)});
     }
-}
+};
 
 export default CameraField;
