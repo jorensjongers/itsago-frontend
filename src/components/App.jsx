@@ -11,12 +11,16 @@ class App extends React.Component {
       }; 
   }
 
+  setUploading = (state) => {
+    this.setState({uploading: state});
+  }
+
   render() {
     const content = () => {
         if (this.state.uploading) {
           return <Loader type='Grid' />;
         } else {
-          return <CameraField txt='Upload image'/>;
+          return <CameraField txt='Upload image' onUpload={this.setUploading}/>;
         };
       }
 

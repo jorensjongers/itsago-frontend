@@ -13,7 +13,7 @@ class CameraField extends React.Component {
         )
     }
     uploadImage = (picture) => {
-        this.setState({uploading: true});
+        this.props.onUpload(true);
         console.log(picture);
         const formData = new FormData();
         formData.append('file', picture, 'image.jpg');
@@ -21,7 +21,7 @@ class CameraField extends React.Component {
           method: 'POST',
           body: formData
         });
-        this.setState({uploading: false})
+        this.props.onUpload(false);
     }
 
     takePicture = () => {
