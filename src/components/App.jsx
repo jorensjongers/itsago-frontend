@@ -1,34 +1,48 @@
 import React from 'react';
-import Loader from 'react-loader-spinner'
-import CameraField from './CameraField.jsx';
-import NavBar from './NavBar.jsx';
+import CameraScreen from './screens/CameraScreen.jsx'
+import StartScreen from './screens/StartScreen.jsx'
+import OtherScreen from './screens/OtherScreen.jsx'
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      uploading: false,
-      images: []
-      }; 
+      activeView: 'start'
+    };
   }
 
-  setUploading = (state) => {
-    this.setState({uploading: state});
-  }
+  changeState = (newState) => {
+    this.setState({activeView: newState})
+  } 
 
   render() {
     const content = () => {
-        if (this.state.uploading) {
-          return <Loader type='Grid' />;
-        } else {
-          return <CameraField txt='Upload image' onUpload={this.setUploading}/>;
-        };
-      }
+        switch(this.state.activeView) {
+          case 'start':
+            return <StartScreen/>;
+          case 'camera':
+            return <CameraScreen/>;
+          case 'other':
+            return <OtherScreen/>;
+        }
+    }
 
     return (
       <div>
         {content()}
-        <NavBar/>
+        <BottomNavigation
+        value={this.state.activeView}
+        onChange={(event, newValue) => {
+          this.setState({activeView: newValue})
+        }}
+        showlabels
+        >
+        <BottomNavigationAction label="Start" value='start'/>
+        <BottomNavigationAction label="Camera" value='camera' />
+        <BottomNavigationAction label="Other"  value='other'/>
+        </BottomNavigation>
       </div>
     )
   }
