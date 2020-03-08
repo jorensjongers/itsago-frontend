@@ -2,8 +2,7 @@ import React from 'react';
 import CameraScreen from './screens/CameraScreen.jsx'
 import StartScreen from './screens/StartScreen.jsx'
 import OtherScreen from './screens/OtherScreen.jsx'
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import Navbar from './Navbar.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -29,21 +28,11 @@ class App extends React.Component {
         }
     }
     return (
-      <div>
-        <div className='screen'> {content()} </div>
-        <BottomNavigation
-        value={this.state.activeView}
-        onChange={(event, newValue) => {
-          this.changeState(newValue);
-        }}
-        showLabels
-        >
-        <BottomNavigationAction label="Start" value='start'/>
-        <BottomNavigationAction label="Camera" value='camera' />
-        <BottomNavigationAction label="Other"  value='other'/>
-        </BottomNavigation>
+      <div className='screen'>
+        {content()}
+        <Navbar changeState={this.changeState}/>
       </div>
     )
-  }
+  } 
 }
 export default App;
