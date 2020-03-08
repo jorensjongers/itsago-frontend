@@ -1,6 +1,5 @@
 import React from 'react'
 import Camera from 'react-camera'
-import Button from './Button'
 const API_URL = "http://localhost:5000";
 
 class CameraField extends React.Component {

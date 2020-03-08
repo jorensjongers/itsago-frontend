@@ -1,6 +1,7 @@
 import React from 'react';
 import Loader from 'react-loader-spinner'
 import CameraField from './CameraField.jsx';
+import NavBar from './NavBar.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class App extends React.Component {
     return (
       <div>
         {content()}
+        <NavBar/>
       </div>
     )
   }
