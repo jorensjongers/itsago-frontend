@@ -28,16 +28,15 @@ class App extends React.Component {
             return <OtherScreen/>;
         }
     }
-
     return (
       <div>
-        {content()}
+        <div className='screen'> {content()} </div>
         <BottomNavigation
         value={this.state.activeView}
         onChange={(event, newValue) => {
-          this.setState({activeView: newValue})
+          this.changeState(newValue);
         }}
-        showlabels
+        showLabels
         >
         <BottomNavigationAction label="Start" value='start'/>
         <BottomNavigationAction label="Camera" value='camera' />

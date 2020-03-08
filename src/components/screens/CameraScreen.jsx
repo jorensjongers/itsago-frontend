@@ -4,6 +4,7 @@ import CameraField from './CameraField.jsx';
 
 class CameraScreen extends React.Component {
     constructor() {
+        super();
         this.state = {
             uploading: false
         }
