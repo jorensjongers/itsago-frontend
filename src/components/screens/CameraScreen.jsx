@@ -5,9 +5,7 @@ import CameraField from './CameraField.jsx';
 class CameraScreen extends React.Component {
     constructor() {
         super();
-        this.state = {
-            uploading: false
-        }
+        this.state = {uploading: false};
     }
     setUploading = (state) => {
         this.setState({uploading: state});
@@ -18,15 +16,11 @@ class CameraScreen extends React.Component {
             if (this.state.uploading) {
               return <Loader type='Grid' />;
             } else {
-              return <CameraField txt='Upload image' onUpload={this.setUploading}/>;
+              return <CameraField onUpload={this.setUploading}/>;
             };
           }
     
-        return (
-          <div>
-            {content()}
-          </div>
-        )
+        return (content())
     }
 }
 

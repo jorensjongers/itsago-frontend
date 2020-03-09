@@ -6,7 +6,7 @@ class Navbar extends React.Component {
         this.state = {activeScreen: this.props.activeView};
     }
 
-    componentDidUpdate(props) {
+    componentWillReceiveProps(props) {
         this.setState({activeScreen: props.activeView})
       }
 

@@ -8,17 +8,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'start',
-      cameraOn: false
+      activeView: 'start'
     };
   }
 
   changeState = (newState) => {
-    if (newState === 'camera') {
-      this.setState({cameraOn: true})
-    } else {
-      this.setState({camaraOn: false})
-    }
     this.setState({activeView: newState})
   } 
 
@@ -27,17 +21,17 @@ class App extends React.Component {
         switch(this.state.activeView) {
           case 'start':
             return <StartScreen/>;
-          case 'camera' && this.state.cameraOn:
+          case 'camera':
             return <CameraScreen/>;
           case 'other':
             return <OtherScreen/>;
         }
     }
     return (
-      <div className='screen'>
-        {content()}
-        <Navbar changeState={this.changeState} activeView={this.state.activeView}/>
-      </div>
+        <div className="screen">
+          {content()}
+          <Navbar changeState={this.changeState} activeView={this.state.activeView}/>
+        </div>
     )
   } 
 }
