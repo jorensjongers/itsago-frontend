@@ -1,6 +1,5 @@
 /* Place the navbar at the bottom of the page, and make it stick */
 .navbar {
-    background-color: rgb(253, 26, 26);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -9,7 +8,8 @@
   /* Style the links inside the navigation bar */
   .navbar button {
     float: left;
-    display: block;
+    width: 33.33333%;
+    outline: none;
     color: #050202;
     text-align: center;
     padding: 14px 16px;
@@ -26,5 +26,5 @@
   /* Add a color to the active/current link */
   .navbar button.active {
     background-color: #4CAF50;
-    color: white;
+    color: #050202;
   }
