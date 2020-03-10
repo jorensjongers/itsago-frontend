@@ -4,7 +4,11 @@ import React from 'react';
 class StartScreen extends React.Component {
     render() {
         return (
-            <h1>This is the start screen</h1>
+            <div className='screen'>
+                <h1> Welcome to Brussels Airport luggage check! </h1>
+                <img className='start-icon' src='./images/suitcase.png'/> 
+                <button onClick={this.props.nextScreen}> Start </button>
+            </div>
         )
     }
 }

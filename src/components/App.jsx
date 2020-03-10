@@ -27,7 +27,7 @@ class App extends React.Component {
         }
     }
     return (
-        <div className="screen">
+        <div>
           {content()}
         </div>
     )
