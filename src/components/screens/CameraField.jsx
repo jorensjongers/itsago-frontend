@@ -7,7 +7,7 @@ class CameraField extends React.Component {
         return (
           <div className="container">
             <Camera className="preview" ref={(cam) => {this.camera = cam;}}/>
-            <button className="captureButton" onClick={this.takePicture}> Take picture </button>
+            <button onClick={this.takePicture}> Take picture </button>
           </div>
         );
     }

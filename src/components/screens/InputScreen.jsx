@@ -2,6 +2,11 @@ import React from 'react'
 import Loader from 'react-loader-spinner'
 import CameraField from './CameraField.jsx';
 
+class InputScreen extends React.Component {
+  render() {
+    return <CameraScreen/>
+  }
+}
 class CameraScreen extends React.Component {
     constructor() {
         super();
@@ -24,4 +29,4 @@ class CameraScreen extends React.Component {
     }
 }
 
-export default CameraScreen;
+export default InputScreen;

@@ -1,5 +1,5 @@
 import React from 'react';
-import CameraScreen from './screens/CameraScreen.jsx'
+import InputScreen from './screens/InputScreen.jsx'
 import StartScreen from './screens/StartScreen.jsx'
 import OtherScreen from './screens/OtherScreen.jsx'
 
@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'start'
+      activeView: 'input'
     };
   }
 
@@ -19,9 +19,9 @@ class App extends React.Component {
     const content = () => {
         switch(this.state.activeView) {
           case 'start':
-            return <StartScreen/>;
-          case 'camera':
-            return <CameraScreen/>;
+            return <StartScreen nextScreen={() => this.setState({activeView: 'input'})}/>;
+          case 'input':
+            return <InputScreen/>;
           case 'other':
             return <OtherScreen/>;
         }
