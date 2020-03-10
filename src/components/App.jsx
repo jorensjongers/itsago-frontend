@@ -30,7 +30,6 @@ class App extends React.Component {
     return (
         <div className="screen">
           {content()}
-          <Navbar changeState={this.changeState} activeView={this.state.activeView}/>
         </div>
     )
   } 
