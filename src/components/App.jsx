@@ -2,7 +2,6 @@ import React from 'react';
 import CameraScreen from './screens/CameraScreen.jsx'
 import StartScreen from './screens/StartScreen.jsx'
 import OtherScreen from './screens/OtherScreen.jsx'
-import Navbar from './Navbar.jsx'
 
 class App extends React.Component {
   constructor(props) {
