@@ -1,15 +1,5 @@
 @import 'components/CameraField.scss';
 
-h1 {
-    margin-top: 10vh;
-    color: #C4211C;
-    font-family: 'ubuntu';
-    font-size: 4vh;
-    text-align: center;
-    margin-bottom: 10vh;
-
-}
-
 .start-icon {
     display: block;
     margin-left: auto;
@@ -34,4 +24,24 @@ button {
 
 button:hover {
     background-color: #A82622;
+}
+
+h1.placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10vh;
+    color: black;
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 10vh;
+
+}
+
+h1 {
+    margin-top: 10vh;
+    color: black;
+    font-family: 'ubuntu';
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 10vh;
+
 }
