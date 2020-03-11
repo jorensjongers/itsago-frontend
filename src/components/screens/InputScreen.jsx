@@ -55,7 +55,7 @@ class ManualEntry extends React.Component {
   render() {
     return (
       <div>
-        <h1 className='placeholder'> Search bar here </h1>
+        <input type="text" className="input" placeholder="Search..." />
       </div>
     );
   }
