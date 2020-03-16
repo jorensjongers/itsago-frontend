@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'start'
+      // TODO change to 'start'
+      activeView: 'input'
     };
   }
 

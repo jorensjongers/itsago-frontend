@@ -5,7 +5,8 @@ import CameraField from './CameraField.jsx';
 class InputScreen extends React.Component {
   constructor() {
     super();
-    this.state = {inputType: ''};
+    //TODO set to empty string
+    this.state = {inputType: 'manual'};
   }
 
   render() {
@@ -52,11 +53,28 @@ class CameraScreen extends React.Component {
 }
 
 class ManualEntry extends React.Component {
+  state = {
+    query: '',
+  }
+ 
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value
+    })
+  }
+
   render() {
     return (
-      <div>
-        <input type="text" className="input" placeholder="Search..." />
-      </div>
+      <form>
+        <input 
+          type="text" 
+          className="input" 
+          placeholder="Search..."
+          ref={input => this.search = input} 
+          onChange={this.handleInputChange}
+        />
+        <p>{this.state.query}</p>
+      </form>
     );
   }
 }
