@@ -1,4 +1,4 @@
-
+import React from 'react'
 
 class SearchBar extends React.Component {
     state = {
@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
         const url = 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + this.state.query + '&api_key=b264cc6a326b887db91199d794593d58&format=json';
         fetch(url)
         .then((response) => response.json())
-        .then((data) => this.setState({results: data.results.artistmatches.artist.slice(0,7)}));
+        .then((data) => this.setState({results: data.results.artistmatches.artist.slice(0,9)}));
       } else {
         this.setState({results: []})
       }
@@ -23,16 +23,18 @@ class SearchBar extends React.Component {
   
     render() {
       return (
-        <form className='autocomplete'>
-          <input 
-            type="text" 
-            className="input" 
-            placeholder="Search..."
-            ref={input => this.search = input} 
-            onChange={this.handleInputChange}
-          />
-          <Suggestions results={this.state.results} />
-        </form>
+        <div>
+          <form className='autocomplete'>
+            <input
+              type="text" 
+              className="input" 
+              placeholder="Search..."
+              ref={input => this.search = input} 
+              onChange={this.handleInputChange}
+            />
+            <Suggestions results={this.state.results} />
+          </form>
+        </div>
       );
     }
   }

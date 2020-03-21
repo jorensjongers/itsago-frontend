@@ -1,10 +1,12 @@
 import React from 'react'
+import CameraScreen from './../Camera.jsx'
+import ManualEntry from './../SearchBar.jsx'
 
 class InputScreen extends React.Component {
   constructor() {
     super();
     //TODO set to empty string
-    this.state = {inputType: 'manual'};
+    this.state = {inputType: ''};
   }
 
   render() {
@@ -12,17 +14,19 @@ class InputScreen extends React.Component {
       case '':
         return (
           <div>
-            <h1> How do you want to enter items? </h1>
-            <button onClick={() => this.setState({inputType: 'camera'})}> Camera </button>
-            <button onClick={() => this.setState({inputType: 'manual'})}> Manual entry </button>
+            <div className='cam-button' onClick={() => this.setState({inputType: 'camera'})}>
+              <img className='cam-button' src="./images/camera_icon.png"/>
+              <h3 className='link'> Scan my item </h3>
+            </div>
+            <h6> Rather not use the camera? </h6>
+            <h6 className='link' onClick={() => this.setState({inputType: 'manual'})}> Insert item manually </h6>
           </div>
         )
       case 'camera':
-        return <CameraScreen/>
+        return <CameraScreen setItem={(item) => this.props.setItem(item)}/>
       case 'manual':
-        return <ManualEntry/>
+        return <ManualEntry setItem={(item) => this.props.setItem(item)}/>
     }
-    
   }
 }
 

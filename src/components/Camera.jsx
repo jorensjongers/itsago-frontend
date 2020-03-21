@@ -1,22 +1,28 @@
 import React from 'react'
 import Camera from 'react-camera'
+import ConfirmScreen from './screens/ConfirmScreen';
 const API_URL = "http://localhost:5000";
+
 
 class CameraScreen extends React.Component {
     constructor() {
         super();
-        this.state = {uploading: false};
-    }
-    setUploading = (state) => {
-        this.setState({uploading: state});
+        this.state = {
+          confirm: false,
+          picturePath: null
+        };
     }
 
     render() {
         const content = () => {
-            if (this.state.uploading) {
-              return <Loader type='Grid' />;
+            if (this.state.confirm) {
+              return <ConfirmScreen path={this.state.picturePath}/>
             } else {
-              return <CameraField onUpload={this.setUploading}/>;
+              return <CameraField 
+                onUpload={() => this.setState({confirm: true})}
+                setPath={(path) => this.setState({picturePath: path})}
+                setItem={(item) => this.props.setItem(item)}
+              />;
             };
           }
     
@@ -25,10 +31,13 @@ class CameraScreen extends React.Component {
 }
 
 class CameraField extends React.Component {
+
     render() {
         return (
-          <div className="container">
-            <Camera className="preview" ref={(cam) => {this.camera = cam;}}/>
+          <div>
+            <div className='container'>
+              <Camera className="preview" ref={(cam) => {this.camera = cam;}}/>
+            </div>
             <button onClick={this.takePicture}> Take picture </button>
           </div>
         );
@@ -36,11 +45,16 @@ class CameraField extends React.Component {
 
     takePicture = () => {
         this.camera.capture()
-        .then(picture => {this.uploadImage(picture)});
+        .then(blob => 
+          { 
+            this.props.setPath(URL.createObjectURL(blob));
+            this.uploadImage(blob);
+          }
+        );
     }
 
     uploadImage = (picture) => {
-      this.props.onUpload(true);
+      /*
       console.log(picture);
       const formData = new FormData();
       formData.append('file', picture, 'image.jpg');
@@ -48,7 +62,9 @@ class CameraField extends React.Component {
         method: 'POST',
         body: formData
       });
-      this.props.onUpload(false);
+      */
+      this.props.setItem('Your face');
+      this.props.onUpload();
   }
 };
 

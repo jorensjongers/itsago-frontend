@@ -1,28 +1,48 @@
 * { box-sizing: border-box; }
 
 .autocomplete {
-  /*the container must be positioned relative:*/
-  position: relative;
+  position: absolute;
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
+  width: 80vw;
+  left: 10vw;
+
 }
 
+input {
+  border: none;
+  position: absolute;
+  display: inline-block;
+  padding: 5px 25px;
+  line-height: 28px;
+  width: 80vw;
+  top: -10vh;
+  border-radius: 14pt;
+  font-size: 24pt;
+  
+}
 
 .autocomplete-list {
+    position: absolute;
+    border-radius: 14pt;
     list-style-type: none;
     display: block;
-    width: auto;
-    padding-left: 2vw;
+    margin-top: calc(10vh + 50px);
+    background-color: white;
+    border-radius: 14pt;
 }
 
 .autocomplete-items {
   font-family: 'ubuntu';
+  color: black;
+  background-color: white;
+  padding: 10px 10px;
+  line-height: 25px;
+  font-size: 15pt;
+  font-weight: bold;
   position: relative;
   border: none;
-  width: auto;
-
+  width: 80vw;
+  border-radius: 14pt;
 }
 
 .autocomplete-items:hover {

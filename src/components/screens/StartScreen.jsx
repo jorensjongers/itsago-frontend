@@ -5,9 +5,9 @@ class StartScreen extends React.Component {
     render() {
         return (
             <div className='screen'>
-                <h1> Welcome to Brussels Airport luggage check! </h1>
-                <img className='start-icon' src='./images/suitcase.png'/> 
-                <button className='big-button' onClick={this.props.nextScreen}> Start </button>
+                <img className='bac-logo' src='./images/bac_logo.png'/>
+                <h1 className='placeholder'> Short explanation goes here </h1>
+                <button onClick={() => this.props.changeState('input')}> Start! </button>
             </div>
         )
     }

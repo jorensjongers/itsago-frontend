@@ -7,7 +7,8 @@ export class WelcomeScreen extends Component {
                 <img className='bac-logo' src='./images/bac_logo.png'/>
                 <h1>Welcome to Brussels Airport Luggage Check</h1>
                 <img className='luggage' src='./images/luggage.png'/>
-                <h6 onClick={() => this.props.changeState('terms')}>By clicking continue you agree to our terms and conditions </h6>
+                <h6> By clicking continue you agree to our </h6>
+                <h6 className='link' onClick={() => this.props.changeState('terms')}> Terms and Conditions </h6>
                 <button onClick={() => this.props.changeState('start')}> Continue </button>
             </div>
         )
