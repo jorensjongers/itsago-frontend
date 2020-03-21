@@ -26,3 +26,5 @@ class InputScreen extends React.Component {
   }
 }
 
+export default InputScreen
+

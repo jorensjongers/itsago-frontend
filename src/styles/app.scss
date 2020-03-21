@@ -1,6 +1,19 @@
 @import 'components/CameraField.scss';
 @import 'components/AutoComplete.scss';
 
+.app {
+    background-color: #17405C;
+    width: 100vw;
+    height: 100vh;
+}
+
+.screen > .bac-logo{
+    position: absolute;
+    left: -2.93%;
+    right: 67.47%;
+    top: 60lo%;
+    bottom: 89.21%;
+}
 .start-icon {
     display: block;
     margin-left: auto;
