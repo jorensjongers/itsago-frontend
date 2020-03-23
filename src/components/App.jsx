@@ -11,8 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // TODO change to 'welcome'
-      activeView: 'input',
+      activeView: 'welcome',
       picturePath: null,
       item: ''
     };
