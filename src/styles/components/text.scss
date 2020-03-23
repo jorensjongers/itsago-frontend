@@ -1,0 +1,113 @@
+h1 {
+    position: absolute;
+    height: 123px;
+    left: 16px;
+    right: 16px;    
+    top: 87px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 41px;
+
+    text-align: center;
+    letter-spacing: 0.374px;
+
+    color: #FFFFFF;
+
+}
+
+/* text in scan item button */
+h3 {
+    font-family: 'ubuntu';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 41px;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+
+}
+
+h5 {
+    position: absolute;
+    left: 16px;
+    right: 16px;    
+    bottom: 200px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.24px;
+
+    color: #FFFFFF;
+}
+
+h6 {   
+    position: absolute;
+    bottom: 21vh;
+    text-align: center;
+    left: 5vw;
+    right: 5vw; 
+    font-family: 'ubuntu';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+
+    color: #FFFFFF;
+
+}
+
+h1.placeholder {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Make clickable text bold */
+h6.link {
+    bottom: 17.5vh;
+    font-weight: bold; 
+}
+
+
+h1.Allowed {
+    color: green;
+}
+
+h1.Warning {
+    color: orange;
+}
+
+h1.Disallowed {
+    color: red;
+}
+
+/* Try again button on text on confirm screen */
+.confirm > h6 {
+    bottom: 67px;
+}
+
+.confirm > h6.link {
+    bottom: 45px;
+}
+
+/* Different text positions on more info screen */
+.info > h5 {
+    top: 5vh;
+    font-weight: bold;
+}
+
+.info > h6 {
+    bottom: 30vh;
+}

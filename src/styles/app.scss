@@ -1,5 +1,10 @@
-@import 'components/CameraField.scss';
-@import 'components/AutoComplete.scss';
+@import 'components/camera.scss';
+@import 'components/searchbar.scss';
+@import 'components/text.scss';
+@import 'components/images.scss';
+@import 'components/buttons.scss';
+
+
 *,
 *:after,
 *:before {
@@ -9,177 +14,9 @@
 }
 
 
+/* set background color for whole app */
 .app {
     background-color: #17405C;
     width: 100vw;
     height: 100vh;
-}
-
-img.bac-logo {
-    position: absolute;
-    left: 2vw;
-    top: 2vh;
-}
-
-img.luggage {
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    top: 37vh;
-}
-
-h1 {
-    position: absolute;
-    height: 123px;
-    left: 16px;
-    right: 16px;    
-    top: 87px;
-    margin-left: 5vw;
-    margin-right: 5vw;
-
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 34px;
-    line-height: 41px;
-
-    text-align: center;
-    letter-spacing: 0.374px;
-
-    color: #FFFFFF;
-
-}
-
-h1.placeholder {
-    font-family: 'Courier New', Courier, monospace;
-}
-
-h6 {   
-    position: absolute;
-    bottom: 21vh;
-    text-align: center;
-    left: 5vw;
-    right: 5vw; 
-    font-family: 'ubuntu';
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 22px;
-    letter-spacing: -0.408px;
-
-    color: #FFFFFF;
-
-}
-
-h6.link {
-    bottom: 17.5vh;
-    font-weight: bold; 
-}
-
-button {
-    border: none;
-    padding: 0px;
-    position: absolute;
-    height: 56px;
-    left: 10vw;
-    width: 80vw;
-    bottom: 6vh;
-    background: #C4211C;
-    border-radius: 14px;
-    color: #FFFFFF;
-    font-family: 'ubuntu';
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.408px;
-}
-
-div.cam-button {
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    left: calc(50vw - 60px);
-    margin-top: 30vh;
-
-    background: #C4211C;
-    border-radius: 14px;
-}
-
-img.cam-button {
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h3.link {
-    font-family: 'ubuntu';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 41px;
-    color: white;
-    text-align: center;
-    margin-top: 5px;
-
-}
-
-img.picture {
-    display: absolute;
-    max-width: 80vw;
-    margin-top: 30vh;
-    margin-left: 10vw;
-}
-
-h1.Allowed {
-    color: green;
-}
-
-h1.Warning {
-    color: orange;
-}
-
-h1.Disallowed {
-    color: red;
-}
-
-.confirm > button {
-    bottom: 119px;
-}
-
-.confirm > h6 {
-    bottom: 67px;
-}
-
-.confirm > h6.link {
-    bottom: 45px;
-}
-
-h5 {
-    position: absolute;
-    left: 16px;
-    right: 16px;    
-    bottom: 200px;
-
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 20px;
-
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.24px;
-
-    color: #FFFFFF;
-}
-
-.info > h5 {
-    top: 5vh;
-    font-weight: bold;
-}
-
-.info > h6 {
-    bottom: 30vh;
 }

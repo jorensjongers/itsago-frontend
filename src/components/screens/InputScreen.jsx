@@ -5,7 +5,7 @@ import ManualEntry from './../SearchBar.jsx'
 class InputScreen extends React.Component {
   constructor() {
     super();
-    this.state = {inputType: ''};
+    this.state = {inputType: 'manual'};
   }
 
   render() {

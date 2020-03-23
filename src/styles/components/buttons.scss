@@ -1,0 +1,36 @@
+/* standard button at bottom of screen */
+button {
+    border: none;
+    padding: 0px;
+    position: absolute;
+    height: 56px;
+    left: 10vw;
+    width: 80vw;
+    bottom: 6vh;
+    background: #C4211C;
+    border-radius: 14px;
+    color: #FFFFFF;
+    font-family: 'ubuntu';
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+}
+
+/* Scan item button */
+div.cam-button {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: calc(50vw - 60px);
+    margin-top: 30vh;
+
+    background: #C4211C;
+    border-radius: 14px;
+}
+
+
+/* Different placement on confirm screen */
+.confirm > button {
+    bottom: 119px;
+}

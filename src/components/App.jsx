@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       // TODO change to 'welcome'
-      activeView: 'welcome',
+      activeView: 'input',
       picturePath: null,
       item: ''
     };

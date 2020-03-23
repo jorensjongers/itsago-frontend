@@ -1,0 +1,38 @@
+* { box-sizing: border-box; }
+
+
+/* search bar */
+input {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  width: 80vw;
+  border-radius: 14pt;
+  border: none;
+  font-family: 'ubuntu';
+  font-weight: bold;
+  font-size: 15pt;
+  padding: 5px 20px;
+  
+}
+
+/* suggestion list */
+.autocomplete-list {
+  position: absolute;
+  border-radius: 14pt;
+  list-style-type: none;
+  top: calc(10vh + 55px);
+  left: 10vw;
+  background-color: white;
+}
+
+/* suggestion items */
+.autocomplete-items {
+  width: 80vw;
+  background-color: transparent;
+  padding: 8px 20px;
+  font-family: 'ubuntu';
+  color: black;
+  font-size: 15pt;
+  font-weight: bold;
+}
