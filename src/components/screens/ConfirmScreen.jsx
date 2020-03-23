@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
 
 export class ConfirmScreen extends Component {
-    selectItem() {
-        /* query backend for result */
-        const result = 'Allowed';
-        this.props.setResult(result);
-        this.props.changeState('result');
-    }
+
     render() {
         console.log(this.props.item);
         return (
-            <div>
+            <div className='confirm'>
                 <h1> Your item: </h1>
-                <img src={this.props.path} />
+                <img className='picture' src={this.props.path} />
                 <h2 className='placeholder'> {this.props.item} </h2> 
-                <button onClick={() => this.selectItem(this.props.item)}> Continue </button>
+                <button onClick={() => this.props.changeState('response')}> Continue </button>
+                <h6> Not your item? </h6>
+                <h6 className='link' onClick={() => this.props.changeState('input')}> Try again </h6>
+
             </div>
         )
     }

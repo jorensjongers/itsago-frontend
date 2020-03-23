@@ -5,7 +5,6 @@ import ManualEntry from './../SearchBar.jsx'
 class InputScreen extends React.Component {
   constructor() {
     super();
-    //TODO set to empty string
     this.state = {inputType: ''};
   }
 
@@ -23,9 +22,16 @@ class InputScreen extends React.Component {
           </div>
         )
       case 'camera':
-        return <CameraScreen setItem={(item) => this.props.setItem(item)}/>
+        return <CameraScreen 
+                  continue={() => this.props.changeState('confirm')}
+                  setPath={(path) => this.props.setPath(path)}
+                  setItem={(str) => this.props.setItem(str)} 
+               />
       case 'manual':
-        return <ManualEntry setItem={(item) => this.props.setItem(item)}/>
+        return <ManualEntry 
+                  continue={() => this.props.changeState('response')}
+                  setItem={(str) => this.props.setItem(str)} 
+               />
     }
   }
 }

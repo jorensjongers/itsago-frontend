@@ -1,32 +1,19 @@
 import React from 'react'
 import Camera from 'react-camera'
-import ConfirmScreen from './screens/ConfirmScreen';
 const API_URL = "http://localhost:5000";
 
 
 class CameraScreen extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-          confirm: false,
-          picturePath: null
-        };
-    }
+
 
     render() {
-        const content = () => {
-            if (this.state.confirm) {
-              return <ConfirmScreen path={this.state.picturePath}/>
-            } else {
-              return <CameraField 
-                onUpload={() => this.setState({confirm: true})}
-                setPath={(path) => this.setState({picturePath: path})}
-                setItem={(item) => this.props.setItem(item)}
-              />;
-            };
-          }
-    
-        return (content())
+        return (
+          <CameraField 
+            setPath={(path) => this.props.setPath(path)}
+            setItem={(item) => this.props.setItem(item)}
+            continue={this.props.continue}
+          />
+        )
     }
 }
 
@@ -63,8 +50,10 @@ class CameraField extends React.Component {
         body: formData
       });
       */
+      /* TODO: set this to backend result */
       this.props.setItem('Your face');
-      this.props.onUpload();
+      this.props.continue();
+
   }
 };
 

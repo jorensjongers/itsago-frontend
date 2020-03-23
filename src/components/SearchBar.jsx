@@ -20,6 +20,12 @@ class SearchBar extends React.Component {
         this.setState({results: []})
       }
     }
+
+    continue(str) {
+      console.log('searchbar: continue')
+      this.props.setItem(str);
+      this.props.continue();
+    }
   
     render() {
       return (
@@ -32,7 +38,10 @@ class SearchBar extends React.Component {
               ref={input => this.search = input} 
               onChange={this.handleInputChange}
             />
-            <Suggestions results={this.state.results} />
+            <Suggestions 
+              results={this.state.results} 
+              select={(str) => this.continue(str)}
+            />
           </form>
         </div>
       );
@@ -42,7 +51,9 @@ class SearchBar extends React.Component {
   class Suggestions extends React.Component {
     render() {
       const options = this.props.results.map( r => (
-        <li key={r.name} className='autocomplete-items'>
+        <li key={r.name} 
+            className='autocomplete-items'
+            onClick={() => this.props.select(r.name)}>
           {r.name}
         </li>
       ))
