@@ -11,7 +11,7 @@ module.exports = {
       extensions: ['.js', '.jsx']
    },
    devServer: {
-      contentBase: './srcgit reset --hard <old-commit-id>',
+      contentBase: './',
       publicPath: '/output'
    },
    module: {
