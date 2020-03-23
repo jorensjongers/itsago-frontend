@@ -14,7 +14,7 @@ class InputScreen extends React.Component {
         return (
           <div>
             <div className='cam-button' onClick={() => this.setState({inputType: 'camera'})}>
-              <img className='cam-button' src=".src/images/camera_icon.png"/>
+              <img className='cam-button' src="./src/images/camera_icon.png"/>
               <h3 className='link'> Scan my item </h3>
             </div>
             <h6> Rather not use the camera? </h6>
