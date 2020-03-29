@@ -1,5 +1,7 @@
 import React from 'react'
 
+const API_URL = "http://localhost:5000";
+
 class SearchBar extends React.Component {
     state = {
       query: '',
@@ -21,8 +23,14 @@ class SearchBar extends React.Component {
       }
     }
 
-    continue(str) {
+    continue = (str) => {
       console.log('searchbar: continue')
+      const formData = new FormData();
+      formData.append('text', str);
+      fetch(API_URL + "/searchbar", {
+        method: 'POST',
+        body: formData
+      })
       this.props.setItem(str);
       this.props.continue();
     }
@@ -33,6 +41,7 @@ class SearchBar extends React.Component {
           <form className='autocomplete'>
             <input
               type="text" 
+              name="searchbar"
               className="input" 
               placeholder="Search..."
               ref={input => this.search = input} 
