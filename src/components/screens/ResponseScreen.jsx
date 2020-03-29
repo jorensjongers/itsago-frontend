@@ -28,6 +28,13 @@ export class ResponseScreen extends Component {
                 return ''
         }
 
+        const pictureOrName = () => {
+            if (this.props.path == null)
+                return <h2 className='placeholder'> {this.props.item} </h2>
+            else 
+                return <img className='picture' src={this.props.path}/>
+        }
+
         const content = () => {
             if (this.state.showInfo) {
                 return (
@@ -38,8 +45,8 @@ export class ResponseScreen extends Component {
                 )
             } else {
                 return (
-                    <div>
-                        <img className='picture' src={this.props.path}/>
+                    <div className='result'>
+                        {pictureOrName()}
                         <h5> {this.state.text} </h5>
                         <h6 className='link' onClick={() => this.setState({showInfo: true})}> {warning()} </h6>
                     </div>

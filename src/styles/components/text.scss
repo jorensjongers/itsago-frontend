@@ -92,7 +92,10 @@ h2.placeholder {
     letter-spacing: 0.374px;
 
     color: #FFFFFF;
+}
 
+div.result > h2.placeholder {
+    bottom: 60vh;
 }
 
 /* Make clickable text bold */

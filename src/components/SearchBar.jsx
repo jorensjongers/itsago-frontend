@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
     }
 
     continue(str) {
-      console.log('searchbar: continue')
+      console.log('searchbar: ' + str)
       this.props.setItem(str);
       this.props.continue();
     }
@@ -43,6 +43,7 @@ class SearchBar extends React.Component {
               select={(str) => this.continue(str)}
             />
           </form>
+          <button onClick={() => this.continue(this.state.query)}>Continue</button>
         </div>
       );
     }

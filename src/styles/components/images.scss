@@ -19,8 +19,11 @@ img.cam-button {
 }
 
 img.picture {
-    display: absolute;
-    max-width: 80vw;
-    margin-top: 30vh;
-    margin-left: 10vw;
+    position: relative;
+    display: block;
+    max-height: 30vh;
+    top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+
 }
