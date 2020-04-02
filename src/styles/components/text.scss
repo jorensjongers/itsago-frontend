@@ -1,23 +1,44 @@
 h1 {
     position: absolute;
-    height: 123px;
-    left: 16px;
-    right: 16px;    
-    top: 87px;
+    height: 123px;  
+    top: 125px;
+    left: 0px;
+    right: 0px;
     margin-left: 5vw;
     margin-right: 5vw;
 
     font-family: Ubuntu;
     font-style: normal;
     font-weight: bold;
-    font-size: 34px;
+    font-size: 33px;
     line-height: 41px;
-
     text-align: center;
     letter-spacing: 0.374px;
 
     color: #FFFFFF;
+}
 
+h1.product-name {
+    font-style: italic;
+    top: 166px;
+}
+
+h2 {
+    position: absolute;
+    height: 76px;
+    left: 17px;
+    right: 15px;
+    top: 336px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 41px;
+    /* or 205% */
+    text-align: center;
+    letter-spacing: 0.374px;
+    color: #FFFFFF;
 }
 
 /* text in scan item button */
@@ -56,7 +77,7 @@ h5 {
 
 h6 {   
     position: absolute;
-    bottom: 21vh;
+    bottom: 10vh;
     text-align: center;
     left: 5vw;
     right: 5vw; 
@@ -70,8 +91,21 @@ h6 {
 
 }
 
-h1.placeholder {
-    font-family: 'Courier New', Courier, monospace;
+h1.explanation {
+    position: absolute;
+    top: 17.09%;
+    bottom: 15.14%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 41px;
+    /* or 205% */
+    text-align: center;
+    letter-spacing: 0.374px;
+
+    color: #FFFFFF;
 }
 
 h2.placeholder {
@@ -100,30 +134,30 @@ div.result > h2.placeholder {
 
 /* Make clickable text bold */
 h6.link {
-    bottom: 17.5vh;
+    bottom: 6.5vh;
     font-weight: bold; 
 }
 
 
-h1.Allowed {
+h1.allowed {
     color: green;
 }
 
-h1.Warning {
+h1.warbing {
     color: orange;
 }
 
-h1.Disallowed {
+h1.prohibited{
     color: red;
 }
 
 /* Try again button on text on confirm screen */
 .confirm > h6 {
-    bottom: 67px;
+    bottom: 6vh;
 }
 
 .confirm > h6.link {
-    bottom: 45px;
+    bottom: 3.5vh;
 }
 
 /* Different text positions on more info screen */
@@ -135,3 +169,4 @@ h1.Disallowed {
 .info > h6 {
     bottom: 30vh;
 }
+

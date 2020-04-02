@@ -1,7 +1,6 @@
 import React from 'react';
 import WelcomeScreen from './screens/WelcomeScreen.jsx'
 import InputScreen from './screens/InputScreen.jsx'
-import StartScreen from './screens/StartScreen.jsx'
 import TermsConditionsScreen from './screens/TermsConditionsScreen.jsx';
 import ConfirmScreen from './screens/ConfirmScreen.jsx'
 import ResponseScreen from './screens/ResponseScreen.jsx'
@@ -11,8 +10,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'welcome',
+      activeView: 'input',
       picturePath: null,
+      items: null,
       item: ''
     };
   }
@@ -28,15 +28,12 @@ class App extends React.Component {
             return  <WelcomeScreen 
                       changeState={(next) => this.changeState(next)}
                     />;
-          case 'start':
-            return  <StartScreen 
-                      changeState={(next) => this.changeState(next)}
-                    />;
           case 'input':
             return  <InputScreen 
                       changeState={(next) => this.changeState(next)}
                       setPath={(path) => this.setState({picturePath: path})}
-                      setItem={(str) => this.setState({item: str})} 
+                      setItems={(items) => this.setState({items: items})}
+                      setItem={(str) => this.setState({item: str})}
                     />;
           case 'moreinfo':
             return  <MoreInfoScreen 
@@ -54,9 +51,10 @@ class App extends React.Component {
                     />;
           case 'confirm':
             return  <ConfirmScreen 
-                      path={this.state.picturePath} 
+                      path={this.state.picturePath}
+                      setItem={(str) => this.changeState({item: str})} 
                       changeState={(next) => this.changeState(next)}
-                      item={this.state.item}
+                      items={this.state.items}
                     />;
         }
     }

@@ -5,7 +5,7 @@ export class TermsConditionsScreen extends Component {
         return (
             <div>
                 <h1>Terms and conditions</h1>
-                <button onClick={() => this.props.changeState('welcome')}> Back </button>
+                <button onClick={() => this.props.changeState('input')}> Agree and start! </button>
             </div>
         )
     }

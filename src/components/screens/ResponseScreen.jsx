@@ -1,28 +1,24 @@
 import React, { Component } from 'react'
+const API_URL = "http://localhost:5000";
 
 export class ResponseScreen extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             result: '',
             text: '',
             info: '',
             showInfo: false
         }
+        const that = this;
+        fetch(API_URL + '/searchbar?text=' + this.props.item)
+        .then(response => response.json())
+        .then(data => that.setState({result: data[0].classification.toLowerCase(), text: data[0].info}));  
     }
-    componentWillMount() {
-        const query = this.props.item;
-        /* query backend for result */
-        const res = 'Warning'
-        const txt = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        const info = 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-        this.setState({result: res, text: txt, info: info})
-        console.log(res)
-    }
-    
+
     render() {
         const warning = () => {
-            if (this.state.result == 'Warning')
+            if (this.state.result == 'warning')
                 return "More info"
             else
                 return ''

@@ -17,13 +17,18 @@ input {
 }
 
 /* suggestion list */
-.autocomplete-list {
+.list {
   position: absolute;
   border-radius: 14pt;
   list-style-type: none;
   top: calc(10vh + 55px);
   left: 10vw;
   background-color: white;
+}
+
+/* suggestion list confirm screen */
+.confirm > .list {
+  top: 65vh;
 }
 
 /* suggestion items */

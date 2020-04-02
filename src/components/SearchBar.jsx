@@ -14,23 +14,15 @@ class SearchBar extends React.Component {
   
     getInfo = () => {
       if (this.state.query && this.state.query.length > 0) {
-        const url = 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + this.state.query + '&api_key=b264cc6a326b887db91199d794593d58&format=json';
-        fetch(url)
+        fetch(API_URL + '/suggest?text=' + this.state.query)
         .then((response) => response.json())
-        .then((data) => this.setState({results: data.results.artistmatches.artist.slice(0,9)}));
+        .then((names) => this.setState({results: names.slice(0,9)}))
       } else {
         this.setState({results: []})
       }
     }
     
     continue = (str) => {
-      console.log('searchbar: continue')
-      const formData = new FormData();
-      formData.append('text', str);
-      fetch(API_URL + "/searchbar", {
-        method: 'POST',
-        body: formData
-      })
       this.props.setItem(str);
       this.props.continue();
     }
@@ -67,7 +59,7 @@ class SearchBar extends React.Component {
           {r.name}
         </li>
       ))
-      return <ul className='autocomplete-list'>{options}</ul>
+      return <ul className='list'>{options}</ul>
     }
   }
   

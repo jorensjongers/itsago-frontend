@@ -6,7 +6,7 @@ button {
     height: 56px;
     left: 10vw;
     width: 80vw;
-    bottom: 6vh;
+    bottom: 16vh;
     background: #C4211C;
     border-radius: 14px;
     color: #FFFFFF;
@@ -32,5 +32,36 @@ div.cam-button {
 
 /* Different placement on confirm screen */
 .confirm > button {
-    bottom: 119px;
+    bottom: 13vh;
+}
+
+.back-button > img {
+    position: absolute;
+    width: 18px;
+    height: 22px;
+    left: 10px;
+    top: 20px;
+
+}
+
+.back-button > h6 {
+    position: absolute;
+    position: absolute;
+    width: 36px;
+    height: 22px;
+    left: 35px;
+    top: 20px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 17px;
+    line-height: 22px;
+    /* identical to box height, or 129% */
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.408px;
+
+    /* Gray 6 */
+    color: #F2F2F2;
 }

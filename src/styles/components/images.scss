@@ -4,26 +4,42 @@ img.bac-logo {
     top: 2vh;
 }
 
-img.luggage {
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    top: 37vh;
+img.itsago {
+    position: relative;
+    display: block;
+    bottom: -350px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img.cam-button {
+    position: absolute;
     display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 30px;
+    margin-left: 15vw;
+    margin-top: -4px;
 }
 
 img.picture {
     position: relative;
     display: block;
-    max-height: 30vh;
+    max-height: 25vh;
     top: 25vh;
     margin-left: auto;
     margin-right: auto;
 
+}
+
+img.checkmark {
+    position: absolute;
+    max-height: 20px;
+    right: 20px;
+}
+
+img.language-icon {
+    position: absolute;
+    max-height: 35px;
+    right: 3vw;
+    top: 2vh;
 }
