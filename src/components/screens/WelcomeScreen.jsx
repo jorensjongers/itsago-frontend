@@ -22,7 +22,7 @@ export class WelcomeScreen extends Component {
     } 
     render() {
         return (
-            <div className='screen'>
+            <div className='welcome'>
                 <img className='bac-logo' src='./src/images/bac_logo.png'/>
                 <img className='language-icon' src='./src/images/language_icon.png'/>
                 <h1> Brussels Airport Hand Baggage Check </h1>

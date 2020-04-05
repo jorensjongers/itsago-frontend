@@ -46,7 +46,6 @@ h3 {
     color: white;
     text-align: center;
     margin-top: 5px;
-
 }
 
 h5 {
@@ -71,8 +70,6 @@ h5 {
 }
 
 h6 {   
-    position: absolute;
-    bottom: 10vh;
     text-align: center;
     left: 5vw;
     right: 5vw; 
@@ -83,7 +80,6 @@ h6 {
     letter-spacing: -0.408px;
 
     color: #FFFFFF;
-
 }
 
 h1.explanation {
@@ -129,9 +125,14 @@ div.result > h2.placeholder {
 
 /* Make clickable text bold */
 h6.link {
-    bottom: 102px;
     font-weight: bold; 
 }
+
+
+.input > h6 {
+    position: absolute;
+    bottom: 25px;
+} 
 
 
 h1.allowed {
@@ -149,13 +150,9 @@ h1.prohibited{
     color: red;
 }
 
-/* Try again button on text on confirm screen */
-.confirm > h6 {
-    bottom: 6vh;
-}
-
-.confirm > h6.link {
-    bottom: 3.5vh;
+.confirm > h1 {
+    position: absolute;
+    top: 15vh;  
 }
 
 /* Different text positions on more info screen */
@@ -192,4 +189,65 @@ input {
     vertical-align: bottom;
     position: relative;
     top: -2px;
-  }
+}
+
+ul {
+    font-family: 'ubuntu';
+    font-size: 15px;
+    color: white;
+}
+
+.welcome > h6.link {
+    position: absolute;
+    bottom: 102px;
+}
+
+.terms > h1 {
+    top: 30px;
+    font-size: 30px;
+}
+
+.terms > ul {
+    position: absolute;
+    top: 80px;
+    margin-left: 50px;
+    margin-right: 30px;
+
+}
+
+.terms > ul > li {
+    margin-top: 5px;
+}
+
+.instructions > h6 {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 20px;
+    left: -40px
+
+}
+
+.instructions > ul {
+    font-size: 17px;
+    list-style-type: none;
+    position: relative;
+    margin: 30px;
+    margin-left: 80px;
+}
+
+.instructions > ul > li> ul {
+    font-size: 17px;
+    list-style-type: none;
+    position: relative;
+    margin-left: 30px;
+}
+
+.instructions > ul > li {
+    margin-top: 10px;
+}
+
+.instructions > ul > li > ul > li {
+    margin-top: 10px;
+}
+

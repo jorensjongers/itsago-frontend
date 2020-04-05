@@ -6,27 +6,27 @@ import BackButton from '../BackButton.jsx'
 class InputScreen extends React.Component {
   constructor() {
     super();
-    this.state = {inputType: ''};
+    this.state = {inputType: ''}
   }
 
   render() {
     switch (this.state.inputType) {
       case '':
         return (
-          <div>
+          <div className='input'>
             <BackButton back={() => this.props.changeState('welcome')}/>
-                <h1 className='explanation'>
-                    The hand luggage checker will reassure whether 
-                    the items you wan to bring are allowed in your carry-on luggage.<br/>
-                    The end of worry at the security checkpoint! <br/>
-                    <br/>
-                    The advice is not binding
-                </h1>
+              <h1> Find out whether or not your item is allowed! </h1>
+              <div className='home-choice'>
                 <button onClick={() => this.setState({inputType: 'camera'})}> 
                     <img className='cam-button' src="/src/images/camera_icon.png" alt=""/>
-                    Scan my item! </button>
-                <h6> Rather not use the camera? </h6>
-                <h6 className='link' onClick={() => this.setState({inputType: 'manual'})}> Insert item manually </h6>
+                    Scan
+                </button>
+                <button onClick={() => this.setState({inputType: 'manual'})}> 
+                    <img className='cam-button' src="/src/images/magnifying_glass.png" alt=""/>
+                    Search
+                </button>
+              </div>
+              <h6 className='link' onClick={() => this.props.changeState('instructions')}> Instructions </h6>}
           </div>
         )
       case 'camera':

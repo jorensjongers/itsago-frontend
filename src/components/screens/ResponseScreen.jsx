@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import BackButton from '../BackButton.jsx'
 const API_URL = "http://localhost:5000";
 
 export class ResponseScreen extends Component {
@@ -17,6 +18,7 @@ export class ResponseScreen extends Component {
     }
 
     render() {
+
         const warning = () => {
             if (this.state.result == 'warning')
                 return "More info"
@@ -25,10 +27,11 @@ export class ResponseScreen extends Component {
         }
 
         const pictureOrName = () => {
-            if (this.props.path == null)
-                return <h2 className='placeholder'> {this.props.item} </h2>
-            else 
-                return <img className='picture' src={this.props.path}/>
+            //if (this.props.path == null)
+              //  return <h2 className='placeholder'> {this.props.item} </h2>
+            //else 
+                // TODO: terug veranderen naar {this.props.path}
+                return <img className='picture' src='/src/images/test.png'/>
         }
 
         const content = () => {
@@ -51,6 +54,7 @@ export class ResponseScreen extends Component {
         }
         return ( 
             <div>
+              <BackButton back={() => this.props.changeState('confirm')}/>
               <h1 className={this.state.result}> {this.state.result} </h1>
               {content()}
               <button onClick={() => this.props.changeState('input')}> Check another item </button>

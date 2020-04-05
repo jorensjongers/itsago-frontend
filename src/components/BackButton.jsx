@@ -7,7 +7,6 @@ export class BackButton extends Component {
                 className='back-button'
                 onClick={this.props.back}>
               <img src="/src/images/back.png"/>
-              <h6> Back </h6>
             </div>
         )
     }

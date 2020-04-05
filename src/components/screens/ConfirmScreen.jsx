@@ -34,17 +34,21 @@ export class ConfirmScreen extends Component {
 
         return (
             <div className='confirm'>
-                <h1> Your item: </h1>
+                <h1> Your item </h1>
                 <img className='picture' src={this.props.path} />
                 {itemList()}
-                <button onClick={() => {
+                <button 
+                        className='again'
+                        onClick={() => {this.props.changeState('input')}}> 
+                  Try again
+                </button>
+                <button className='continue'
+                        onClick={() => {
                         this.props.setItem(this.state.selectedItem); 
                         this.props.changeState('response')}
                     }> 
                   Continue 
                 </button>
-                <h6> item not in list? </h6>
-                <h6 className='link' onClick={() => this.props.changeState('input')}> Try again </h6>
 
             </div>
         )

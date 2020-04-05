@@ -1,12 +1,11 @@
 /* standard button at bottom of screen */
+
 button {
     border: none;
     padding: 0px;
-    position: absolute;
     height: 56px;
     left: 10vw;
     width: 80vw;
-    bottom: 30px;
     background: #C4211C;
     border-radius: 14px;
     color: #FFFFFF;
@@ -15,9 +14,25 @@ button {
     font-size: 17px;
     line-height: 22px;
     letter-spacing: -0.408px;
+
 }
 
-button.disabled {
+.welcome > button {
+    position: absolute;
+    bottom: 30px;
+}
+
+.terms > button {
+    position: absolute;
+    bottom: 30px;
+}
+
+.instructions > button {
+    position: absolute;
+    bottom: 30px;
+}
+
+.welcome > button.disabled {
     background: grey;
 }
 
@@ -69,3 +84,30 @@ div.cam-button {
     /* Gray 6 */
     color: #F2F2F2;
 }
+
+.home-choice {
+    position: absolute;
+    bottom: 40px;
+}
+
+.home-choice > button {
+    margin-top: 20px;
+    position: relative;
+    bottom: 30px;
+    display: block;
+}
+
+.confirm > button {
+    width: 35vw;
+    position: absolute;
+    bottom: 40px;
+}
+
+.confirm > button.again {
+    left: 10vw;
+}
+
+.confirm > button.continue {
+    left: 55vw;
+}
+

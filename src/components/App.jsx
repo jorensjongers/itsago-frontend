@@ -4,13 +4,14 @@ import InputScreen from './screens/InputScreen.jsx'
 import TermsConditionsScreen from './screens/TermsConditionsScreen.jsx';
 import ConfirmScreen from './screens/ConfirmScreen.jsx'
 import ResponseScreen from './screens/ResponseScreen.jsx'
+import InstructionScreen from './screens/InstructionScreen.jsx'
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'welcome',
+      activeView: 'response',
       picturePath: null,
       items: null,
       item: ''
@@ -54,7 +55,12 @@ class App extends React.Component {
                       path={this.state.picturePath}
                       setItem={(str) => {this.setState({item: str}), console.log('here' + str)}} 
                       changeState={(next) => this.changeState(next)}
-                      items={this.state.items}
+                      //items={this.state.items}
+                      items={[{name: 'fireworks'}, {name: 'person'}, {name: 'clothes'}]}
+                    />;
+          case 'instructions':
+            return  <InstructionScreen 
+                      changeState={(next) => this.changeState(next)}
                     />;
         }
     }

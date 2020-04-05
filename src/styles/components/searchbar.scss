@@ -18,17 +18,13 @@ input {
 
 /* suggestion list */
 .list {
-  position: absolute;
+  position: relative;
   border-radius: 14pt;
   list-style-type: none;
-  top: calc(10vh + 55px);
+  /*top: calc(10vh + 55px); */
   left: 10vw;
+  width: 80vw;
   background-color: white;
-}
-
-/* suggestion list confirm screen */
-.confirm > .list {
-  top: 65vh;
 }
 
 /* suggestion items */
@@ -40,4 +36,14 @@ input {
   color: black;
   font-size: 15pt;
   font-weight: bold;
+}
+
+.confirm > .list {
+  position: absolute;
+  bottom: 120px;
+  border-radius: 14pt;
+  list-style-type: none;
+  left: 10vw;
+  width: 80vw;
+  background-color: white;
 }
