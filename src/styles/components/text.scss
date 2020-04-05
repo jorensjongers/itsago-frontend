@@ -19,7 +19,7 @@ h1 {
 }
 
 h1.product-name {
-    font-style: italic;
+    font-style: normal;
     top: 166px;
 }
 
@@ -140,14 +140,17 @@ h6.link {
 
 
 h1.allowed {
+    top: 75px;
     color: green;
 }
 
 h1.warbing {
+    top: 75px;
     color: orange;
 }
 
 h1.prohibited{
+    top: 75px;
     color: red;
 }
 

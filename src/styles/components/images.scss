@@ -21,14 +21,45 @@ img.cam-button {
     margin-top: -4px;
 }
 
+
 img.picture {
     position: relative;
     display: block;
     max-height: 25vh;
     top: 25vh;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
+}
 
+img.allowed {
+    position: relative;
+    display: block;
+    max-height: 25vh;
+    top: 25vh;
+    margin-left: auto;
+    margin-right: auto; 
+    border: 7px solid green;
+}
+
+img.warning {
+    position: relative;
+    display: block;
+    max-height: 25vh;
+    top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 7px solid orange;
+
+}
+
+img.prohibited {
+    position: relative;
+    display: block;
+    max-height: 25vh;
+    top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 7px solid red;
 }
 
 img.checkmark {

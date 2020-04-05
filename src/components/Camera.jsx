@@ -16,13 +16,14 @@ class CameraScreen extends React.Component {
     }
 
     uploadImage = (picture) => {
-      const formData = new FormData().append('file', picture, 'image.png');
+      const formData = new FormData();
+      formData.append("file", picture, "image.png");
       fetch(API_URL + "/upload_image", {
         method: 'POST',
         body: formData
-      }).
-      then((response) => console.log(response)).
-      then((data) => {
+      })
+      .then((response) => response.json())
+      .then((data) => {
         this.props.setItems(data)
         this.props.continue()
       });

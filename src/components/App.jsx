@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'input',
+      activeView: 'welcome',
       picturePath: null,
       items: null,
       item: ''
@@ -52,7 +52,7 @@ class App extends React.Component {
           case 'confirm':
             return  <ConfirmScreen 
                       path={this.state.picturePath}
-                      setItem={(str) => this.changeState({item: str})} 
+                      setItem={(str) => {this.setState({item: str}), console.log('here' + str)}} 
                       changeState={(next) => this.changeState(next)}
                       items={this.state.items}
                     />;
