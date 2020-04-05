@@ -18,11 +18,6 @@ h1 {
     color: #FFFFFF;
 }
 
-h1.product-name {
-    font-style: normal;
-    top: 166px;
-}
-
 h2 {
     position: absolute;
     height: 76px;
@@ -134,7 +129,7 @@ div.result > h2.placeholder {
 
 /* Make clickable text bold */
 h6.link {
-    bottom: 6.5vh;
+    bottom: 102px;
     font-weight: bold; 
 }
 
@@ -173,3 +168,28 @@ h1.prohibited{
     bottom: 30vh;
 }
 
+label {
+    display: block;
+    position: absolute;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 125px;
+    padding-left: 15px;
+    font-family: 'ubuntu';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    color: white;
+}
+
+input {
+    width: 17px;
+    height: 17px;
+    padding: 0px;
+    left: -10px;
+    vertical-align: bottom;
+    position: relative;
+    top: -2px;
+  }

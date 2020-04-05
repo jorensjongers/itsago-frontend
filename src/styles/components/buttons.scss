@@ -6,7 +6,7 @@ button {
     height: 56px;
     left: 10vw;
     width: 80vw;
-    bottom: 16vh;
+    bottom: 30px;
     background: #C4211C;
     border-radius: 14px;
     color: #FFFFFF;
@@ -15,6 +15,10 @@ button {
     font-size: 17px;
     line-height: 22px;
     letter-spacing: -0.408px;
+}
+
+button.disabled {
+    background: grey;
 }
 
 /* Scan item button */
