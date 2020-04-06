@@ -49,16 +49,13 @@ h3 {
 }
 
 h5 {
-    position: absolute;
-    left: 16px;
-    right: 16px;    
-    bottom: 200px;
-
     font-family: Ubuntu;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
+    left: 5vw;
+    right: 5vw;
 
 
     display: flex;
@@ -159,18 +156,18 @@ h1.prohibited{
 /* Different text positions on more info screen */
 .info > h5 {
     position: absolute;
-    top: -30vh;
+    top: 15vh;
     font-weight: bold;
 }
 
 .info > h6 {
     position: absolute;
-    top: 30vh;
+    top: 35vh;
 }
 
 .info > h6.link {
     position: absolute;
-    top: 50vh; 
+    top: 55vh; 
 }
 
 label {
@@ -285,5 +282,15 @@ a {
     z-index: 1;
     margin-left: auto;
     margin-right: auto; 
+}
+
+.result > h5 {
+    position: absolute;
+    top: 47vh;
+}
+
+.result > h6 {
+    position: absolute;
+    top: 65vh;
 }
 
