@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'response',
+      activeView: 'input',
       picturePath: null,
       items: null,
       item: ''
@@ -56,7 +56,7 @@ class App extends React.Component {
                       setItem={(str) => {this.setState({item: str}), console.log('here' + str)}} 
                       changeState={(next) => this.changeState(next)}
                       //items={this.state.items}
-                      items={[{name: 'fireworks'}, {name: 'person'}, {name: 'clothes'}]}
+                      items={[{name: 'allowed'}, {name: 'warning'}, {name: 'prohibited'}]}
                     />;
           case 'instructions':
             return  <InstructionScreen 

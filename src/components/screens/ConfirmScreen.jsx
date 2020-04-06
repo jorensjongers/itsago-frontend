@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import BackButton from '../BackButton.jsx'
 
 export class ConfirmScreen extends Component {
 
@@ -34,6 +35,7 @@ export class ConfirmScreen extends Component {
 
         return (
             <div className='confirm'>
+                <BackButton back={() => this.props.changeState('input')}/>
                 <h1> Your item </h1>
                 <img className='picture' src={this.props.path} />
                 {itemList()}

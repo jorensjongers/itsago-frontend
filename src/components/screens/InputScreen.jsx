@@ -1,12 +1,12 @@
 import React from 'react'
 import CameraScreen from '../Camera.jsx'
-import ManualEntry from '../SearchBar.jsx'
 import BackButton from '../BackButton.jsx'
+import SearchBar from '../SearchBar.jsx';
 
 class InputScreen extends React.Component {
   constructor() {
     super();
-    this.state = {inputType: ''}
+    this.state = {inputType: 'manual'}
   }
 
   render() {
@@ -36,7 +36,7 @@ class InputScreen extends React.Component {
                   setItems={(items) => this.props.setItems(items)} 
                />
       case 'manual':
-        return <ManualEntry 
+        return <SearchBar
                   continue={() => this.props.changeState('response')}
                   setItem={(str) => this.props.setItem(str)} 
                />

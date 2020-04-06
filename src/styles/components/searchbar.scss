@@ -2,7 +2,7 @@
 
 
 /* search bar */
-input {
+.autocomplete > input {
   position: absolute;
   top: 10vh;
   left: 10vw;
@@ -17,11 +17,11 @@ input {
 }
 
 /* suggestion list */
-.list {
-  position: relative;
+.autocomplete > .list {
+  position: absolute;
   border-radius: 14pt;
   list-style-type: none;
-  /*top: calc(10vh + 55px); */
+  top: calc(10vh + 55px);
   left: 10vw;
   width: 80vw;
   background-color: white;
@@ -46,4 +46,10 @@ input {
   left: 10vw;
   width: 80vw;
   background-color: white;
+}
+
+.autocomplete > button {
+  position: absolute;
+  left: 10vw;
+  bottom: 10vh;
 }

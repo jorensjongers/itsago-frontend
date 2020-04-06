@@ -137,17 +137,18 @@ h6.link {
 
 h1.allowed {
     top: 75px;
-    color: green;
+    color: rgb(47, 173, 92);
 }
 
-h1.warbing {
+h1.warning {
     top: 75px;
-    color: orange;
+    color: rgb(242, 101, 34);
+    opacity: 1;
 }
 
 h1.prohibited{
     top: 75px;
-    color: red;
+    color:rgb(198, 28, 20);
 }
 
 .confirm > h1 {
@@ -157,12 +158,18 @@ h1.prohibited{
 
 /* Different text positions on more info screen */
 .info > h5 {
-    top: 5vh;
+    position: absolute;
+    top: -10vh;
     font-weight: bold;
 }
 
 .info > h6 {
-    bottom: 30vh;
+    position: absolute;
+    bottom: 45vh;
+}
+
+.info > h6.link {
+    bottom: 25vh; 
 }
 
 label {
@@ -181,7 +188,7 @@ label {
     color: white;
 }
 
-input {
+.welcome > input {
     width: 17px;
     height: 17px;
     padding: 0px;
@@ -249,5 +256,32 @@ ul {
 
 .instructions > ul > li > ul > li {
     margin-top: 10px;
+}
+
+.result > h6.link {
+    position: absolute;
+    bottom: 160px;
+}
+
+a {
+    text-align: center;
+    left: 5vw;
+    right: 5vw; 
+    font-family: 'ubuntu';
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+
+    color: #FFFFFF;
+}
+
+.nopicture > h2 {
+    position: absolute;
+    top: 40vh;
+    font-size: 40px;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto; 
 }
 
