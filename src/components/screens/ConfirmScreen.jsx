@@ -35,13 +35,14 @@ export class ConfirmScreen extends Component {
 
         return (
             <div className='confirm'>
-                <BackButton back={() => this.props.changeState('input')}/>
+                <BackButton back={() => this.props.changeState('camera')}/>
                 <h1> Your item </h1>
                 <img className='picture' src={this.props.path} />
                 {itemList()}
                 <button 
                         className='again'
-                        onClick={() => {this.props.changeState('input')}}> 
+                        onClick={() => {this.props.changeState('input')}}>
+                  Not found? <br/>
                   Try again
                 </button>
                 <button className='continue'

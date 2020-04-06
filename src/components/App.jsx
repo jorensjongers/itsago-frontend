@@ -5,13 +5,16 @@ import TermsConditionsScreen from './screens/TermsConditionsScreen.jsx';
 import ConfirmScreen from './screens/ConfirmScreen.jsx'
 import ResponseScreen from './screens/ResponseScreen.jsx'
 import InstructionScreen from './screens/InstructionScreen.jsx'
+import SearchBar from './SearchBar.jsx';
+import CameraScreen from './Camera.jsx'
+
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'input',
+      activeView: 'welcome',
       picturePath: null,
       items: null,
       item: ''
@@ -19,7 +22,14 @@ class App extends React.Component {
   }
 
   changeState = (newState) => {
-    this.setState({activeView: newState})
+    if (newState == 'input')
+      this.setState({
+        activeView: 'input',
+        picturePath: null,
+        items: null,
+        item: ''})
+    else
+      this.setState({activeView: newState})
   } 
 
   render() {
@@ -32,9 +42,6 @@ class App extends React.Component {
           case 'input':
             return  <InputScreen 
                       changeState={(next) => this.changeState(next)}
-                      setPath={(path) => this.setState({picturePath: path})}
-                      setItems={(items) => this.setState({items: items})}
-                      setItem={(str) => this.setState({item: str})}
                     />;
           case 'moreinfo':
             return  <MoreInfoScreen 
@@ -62,6 +69,18 @@ class App extends React.Component {
             return  <InstructionScreen 
                       changeState={(next) => this.changeState(next)}
                     />;
+          case 'camera':
+            return <CameraScreen 
+                      continue={() => this.changeState('confirm')}
+                      setPath={(path) => this.setState({picturePath: path})}
+                      setItems={(items) => this.setState({items: items})}
+                    />
+          case 'manual':
+            return <SearchBar
+                      continue={() => this.changeState('response')}
+                      setItem={(str) => this.setState({item: str})}
+                      changeState={(next) => this.changeState(next)}
+                    />
         }
     }
     return (

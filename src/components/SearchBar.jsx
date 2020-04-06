@@ -1,4 +1,5 @@
 import React from 'react'
+import BackButton from './BackButton.jsx'
 
 const API_URL = "http://localhost:5000";
 
@@ -38,6 +39,7 @@ class SearchBar extends React.Component {
     render() {
       return (
         <div className='autocomplete'>
+          <BackButton back={() => this.props.changeState('input')}/>
           <form className='autocomplete'>
             <input
               type="text" 

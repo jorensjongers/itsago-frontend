@@ -28,7 +28,7 @@ export class WelcomeScreen extends Component {
                 <h1> Brussels Airport Hand Baggage Check </h1>
                 <h2> Developed by </h2>
                 <img className='itsago' src='./src/images/itsago.png'/>
-                <label htmlFor="terms">
+                <label className='terms' htmlFor="terms">
                     <input 
                         type="checkbox"
                         id='terms'

@@ -48,6 +48,7 @@ export class ResponseScreen extends Component {
                 return (
                     <div className='info'>
                         <BackButton  back={() => this.setState({showInfo: false})} />
+                        <h1 className={this.state.result}> {this.state.result} </h1>
                         <h5> {this.state.text} </h5>
                         <h6> {this.state.info} </h6>
                         <h6 className='link'> 
@@ -60,6 +61,12 @@ export class ResponseScreen extends Component {
             } else {
                 return (
                     <div className='result'>
+                        <BackButton back={() => {
+                            if (this.props.path == null)
+                                this.props.changeState('manual')
+                            else 
+                                this.props.changeState('confirm')}}/>
+                        <h1 className={this.state.result}> {this.state.result} </h1>
                         {pictureOrName()}
                         <h5> {this.state.text} </h5>
                         <h6 className='link' onClick={() => this.setState({showInfo: true})}> {warning()} </h6>
@@ -69,8 +76,6 @@ export class ResponseScreen extends Component {
         }
         return ( 
             <div className='response'>
-              <BackButton back={() => this.props.changeState('confirm')}/>
-              <h1 className={this.state.result}> {this.state.result} </h1>
               {content()}
               <button onClick={() => this.props.changeState('input')}> Check another item </button>
               <h6 className='link'> Send us your feedback </h6>
