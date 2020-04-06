@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
       //if (this.state.query && this.state.query.length > 0) {
       //  fetch(API_URL + '/suggest?text=' + this.state.query)
       //  .then((response) => response.json())
-      //  .then((names) => this.setState({results: names.slice(0,9)}))
+      //  .then((names) => this.setState({results: names.slice(0,7)}))
       //} else {
         this.setState({results: [{name: 'allowed'},
                                  {name: 'warning'},
@@ -25,9 +25,7 @@ class SearchBar extends React.Component {
                                  {name: 'item 4'},
                                  {name: 'item 5'},
                                  {name: 'item 6'},
-                                 {name: 'item 7'},
-                                 {name: 'item 8'},
-                                 {name: 'item 9'}]})
+                                 {name: 'item 7'}]})
       //}
     }
     

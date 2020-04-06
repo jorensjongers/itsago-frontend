@@ -17,7 +17,7 @@ export class ResponseScreen extends Component {
         //fetch(API_URL + '/searchbar?text=' + this.props.item)
         //.then(response => response.json())
         //.then(data => that.setState({result: data[0].classification.toLowerCase(), text: data[0].info})); 
-        this.state.result = this.props.item;
+        this.state.result = 'warning';//this.props.item;
     }
 
     render() {
