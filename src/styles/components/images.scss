@@ -5,9 +5,11 @@ img.bac-logo {
 }
 
 img.itsago {
-    position: relative;
+    position: absolute;
     display: block;
-    bottom: -350px;
+    top: 40vh;
+    left: 50%;
+    transform: translate(-50%, 0);
     height: 100px;
     margin-left: auto;
     margin-right: auto;
