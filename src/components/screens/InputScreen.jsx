@@ -18,7 +18,7 @@ class InputScreen extends React.Component {
                 Search
             </button>
           </div>
-          <h6 className='link' onClick={() => this.props.changeState('instructions')}> Instructions </h6>}
+          <h6 className='link' onClick={() => this.props.changeState('instructions')}> Instructions </h6>
       </div>
     )
   }

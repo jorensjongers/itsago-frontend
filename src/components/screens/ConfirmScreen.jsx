@@ -41,7 +41,7 @@ export class ConfirmScreen extends Component {
                 {itemList()}
                 <button 
                         className='again'
-                        onClick={() => {this.props.changeState('input')}}>
+                        onClick={() => {this.props.changeState('camera')}}>
                   Not found? <br/>
                   Try again
                 </button>

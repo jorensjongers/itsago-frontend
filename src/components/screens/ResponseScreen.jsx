@@ -48,12 +48,12 @@ export class ResponseScreen extends Component {
                 return (
                     <div className='info'>
                         <BackButton  back={() => this.setState({showInfo: false})} />
-                        <h1 className={this.state.result}> {this.state.result} </h1>
+                        <h1 className={this.state.result}> {this.state.result.replace(/^\w/, c => c.toUpperCase())} </h1>
                         <h5> {this.state.text} </h5>
                         <h6> {this.state.info} </h6>
                         <h6 className='link'> 
                             Still not clear? <br/>
-                            Find the full regulations <space/>
+                            Find the full regulations &nbsp;
                             <a href="https://www.brusselsairport.be/en/passengers/your-travel-planner/packing-your-bags/your-hand-baggage">here</a>
                         </h6>
                     </div>
@@ -66,7 +66,7 @@ export class ResponseScreen extends Component {
                                 this.props.changeState('manual')
                             else 
                                 this.props.changeState('confirm')}}/>
-                        <h1 className={this.state.result}> {this.state.result} </h1>
+                        <h1 className={this.state.result}> {this.state.result.replace(/^\w/, c => c.toUpperCase())} </h1>
                         {pictureOrName()}
                         <h5> {this.state.text} </h5>
                         <h6 className='link' onClick={() => this.setState({showInfo: true})}> {warning()} </h6>

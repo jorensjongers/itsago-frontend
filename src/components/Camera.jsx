@@ -1,5 +1,6 @@
 import React from 'react'
 import Camera, { FACING_MODES } from 'react-html5-camera-photo';
+import BackButton from './BackButton.jsx'
 import 'react-html5-camera-photo/build/css/index.css';
 const API_URL = "http://localhost:5000";
 
@@ -13,7 +14,7 @@ class CameraScreen extends React.Component {
         .then((picture) => {
           // TODO: remove continue and activate uploadimage
           //this.uploadImage(picture)
-          this.props.continue();
+          this.props.changeState('confirm');
         });
     }
 
@@ -26,17 +27,23 @@ class CameraScreen extends React.Component {
       })
       .then((response) => response.json())
       .then((data) => {
-        this.props.setItems(data)
-        this.props.continue()
+        this.props.setItems(data);
+        this.props.changeState('confirm');
       });
     }
 
     render() {
         return (
-          <Camera
-            onTakePhoto = {(dataUri) => {this.takePicture(dataUri);}}
-            idealFacingMode = {FACING_MODES.ENVIRONMENT}
-          />
+          <div>
+            <BackButton back={() => this.props.changeState('input')}/>
+            <div className='camera'>
+              <Camera
+                onTakePhoto = {(dataUri) => {this.takePicture(dataUri);}}
+                idealFacingMode = {FACING_MODES.ENVIRONMENT}
+                isImageMirror = {false}
+              />
+            </div>
+          </div>
         )
     }
 }

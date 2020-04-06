@@ -71,7 +71,7 @@ class App extends React.Component {
                     />;
           case 'camera':
             return <CameraScreen 
-                      continue={() => this.changeState('confirm')}
+                      changeState={(next) => this.changeState(next)}
                       setPath={(path) => this.setState({picturePath: path})}
                       setItems={(items) => this.setState({items: items})}
                     />
