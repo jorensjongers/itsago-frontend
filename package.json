@@ -4,6 +4,7 @@
   "description": "Luggage object recognition",
   "main": "index.js",
   "scripts": {
+    "deploy": "webpack -p && scp -r /Users/jorensjongers/brussels-airport-frontend/output/ joren@itsago.app:/var/www/itsago.app/html/",
     "build": "webpack -p",
     "dev": "webpack-dev-server --hot --inline"
   },
