@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Back from '../images/back.png'
 
 export class BackButton extends Component {
     render() {
@@ -6,7 +7,7 @@ export class BackButton extends Component {
             <div  
                 className='back-button'
                 onClick={this.props.back}>
-              <img src="/src/images/back.png"/>
+              <img src={Back}/>
             </div>
         )
     }

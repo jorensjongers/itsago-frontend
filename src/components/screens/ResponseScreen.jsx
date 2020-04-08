@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import BackButton from '../BackButton.jsx'
+import Allowed from '../../images/allowed.png'
+import Warning from '../../images/warning.png'
+import Prohibited from '../../images/prohibited.png'
 const API_URL = "http://localhost:5000";
 
 
@@ -22,6 +25,15 @@ export class ResponseScreen extends Component {
 
     render() {
 
+        const getIcon = (name) => {
+            if (name == 'allowed')
+                return Allowed
+            else if (name == 'warning')
+                return Warning
+            else if (name == 'prohibited')
+                return Prohibited
+        }
+        
         const warning = () => {
             if (this.state.result == 'warning')
                 return "Read more"
@@ -32,13 +44,13 @@ export class ResponseScreen extends Component {
         const pictureOrName = () => {
             if (this.props.path == null)
                 return (<div className='nopicture'>
-                            <img className='icon' src={"src/images/"+ this.state.result + ".png"} alt=""/>
+                            <img className='icon' src={getIcon(this.state.result)} />
                             {/* TODO: change to this.props.item */}
                             <h2> item name </h2>
                         </div>)
             else 
                 return (<div className='image'>
-                            <img className='icon' src={"src/images/"+ this.state.result + ".png"} alt=""/>
+                            <img className='icon' src={getIcon(this.state.result)} />
                             <img className='picture' src={this.props.path}/>
                         </div>)
         }

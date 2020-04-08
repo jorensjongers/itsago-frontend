@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BackButton from '../BackButton.jsx'
+import CheckMark from '../../images/checkmark.png'
 
 export class ConfirmScreen extends Component {
 
@@ -27,7 +28,7 @@ export class ConfirmScreen extends Component {
                     onClick={() => this.selectItem(k.name)}>  
                   {k.name} 
                   {k.name == this.state.selectedItem &&
-                    <img className='checkmark' src='./src/images/checkmark.png' />}
+                    <img className='checkmark' src={CheckMark} />}
                 </li>
             ));
             return <ul className='list'>{options}</ul>

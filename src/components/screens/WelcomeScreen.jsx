@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import BacLogo from '../../images/bac_logo.png'
+import LanguageIcon from '../../images/language_icon.png'
+import Itsago from '../../images/itsago.png'
 
 export class WelcomeScreen extends Component {
 
@@ -23,11 +26,11 @@ export class WelcomeScreen extends Component {
     render() {
         return (
             <div className='welcome'>
-                <img className='bac-logo' src='./src/images/bac_logo.png'/>
-                <img className='language-icon' src='./src/images/language_icon.png'/>
+                <img className='bac-logo' src={BacLogo}/>
+                <img className='language-icon' src={LanguageIcon}/>
                 <h1> Brussels Airport Hand Baggage Check </h1>
                 <h2> Developed by </h2>
-                <img className='itsago' src='./src/images/itsago.png'/>
+                <img className='itsago' src={Itsago}/>
                 <label className='terms' htmlFor="terms">
                     <input 
                         type="checkbox"
