@@ -9,6 +9,9 @@ import SearchBar from './SearchBar.jsx';
 import CameraScreen from './Camera.jsx'
 
 
+const API_URL = "https://itsago.app/api";
+
+
 
 class App extends React.Component {
   constructor(props) {

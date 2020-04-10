@@ -2,7 +2,7 @@ import React from 'react'
 import Camera, { FACING_MODES } from 'react-html5-camera-photo';
 import BackButton from './BackButton.jsx'
 import 'react-html5-camera-photo/build/css/index.css';
-const API_URL = "https://itsago.app/api";
+import API_URL from './App.jsx'
 
 
 class CameraScreen extends React.Component {
