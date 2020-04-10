@@ -1,5 +1,7 @@
 import React from 'react'
 import BackButton from '../BackButton.jsx'
+import CameraIcon from '../../images/camera_icon.png'
+import MagnifyingGlass from '../../images/magnifying_glass.png'
 
 
 class InputScreen extends React.Component {
@@ -10,11 +12,11 @@ class InputScreen extends React.Component {
           <h1> Find out whether or not your item is allowed! </h1>
           <div className='home-choice'>
             <button onClick={() => this.props.changeState('camera')}> 
-                <img className='cam-button' src="/src/images/camera_icon.png" alt=""/>
+                <img className='cam-button' src={CameraIcon}/>
                 Scan
             </button>
             <button onClick={() => this.props.changeState('manual')}> 
-                <img className='cam-button' src="/src/images/magnifying_glass.png" alt=""/>
+                <img className='cam-button' src={MagnifyingGlass} alt=""/>
                 Search
             </button>
           </div>

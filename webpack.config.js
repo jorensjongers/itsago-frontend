@@ -11,8 +11,8 @@ module.exports = {
       extensions: ['.js', '.jsx']
    },
    devServer: {
-      contentBase: './',
-      publicPath: '/output'
+      contentBase: './output',
+      publicPath: 'output/'
    },
    module: {
       rules: [
@@ -31,6 +31,10 @@ module.exports = {
          {
             test: /\.css/,
             use: ['style-loader', 'css-loader'] 
+         },
+         {
+            test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+            use: ["url-loader"]
          }
       ]
    }
