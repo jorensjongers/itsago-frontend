@@ -1,7 +1,7 @@
 import React from 'react'
 import BackButton from './BackButton.jsx'
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://itsago.app/api";
 
 class SearchBar extends React.Component {
     state = {

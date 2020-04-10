@@ -3,7 +3,7 @@ import BackButton from '../BackButton.jsx'
 import Allowed from '../../images/allowed.png'
 import Warning from '../../images/warning.png'
 import Prohibited from '../../images/prohibited.png'
-const API_URL = "http://localhost:5000";
+const API_URL = "https://itsago.app/api";
 
 
 export class ResponseScreen extends Component {
