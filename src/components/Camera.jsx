@@ -12,9 +12,7 @@ class CameraScreen extends React.Component {
       fetch(dataUri)
         .then(x => x.blob())
         .then((picture) => {
-          // TODO: remove continue and activate uploadimage
-          //this.uploadImage(picture)
-          this.props.changeState('confirm');
+          this.uploadImage(picture)
         });
     }
 

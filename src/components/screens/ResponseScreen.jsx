@@ -6,18 +6,17 @@ const API_URL = "http://localhost:5000";
 export class ResponseScreen extends Component {
     constructor(props) {
         super(props);
-        // TODO: reset to empty strings and activate API
         this.state = {
             result: '',
-            text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-            info: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            text: '',
+            info: '',
             showInfo: false
         }
-        //const that = this;
-        //fetch(API_URL + '/searchbar?text=' + this.props.item)
-        //.then(response => response.json())
-        //.then(data => that.setState({result: data[0].classification.toLowerCase(), text: data[0].info})); 
-        this.state.result = this.props.item;
+        const that = this;
+        fetch(API_URL + '/searchbar?text=' + this.props.item)
+        .then(response => response.json())
+        .then(data => that.setState({result: data[0].classification.toLowerCase(), 
+                                             text: data[0].info})); 
     }
 
     render() {
@@ -33,8 +32,7 @@ export class ResponseScreen extends Component {
             if (this.props.path == null)
                 return (<div className='nopicture'>
                             <img className='icon' src={"src/images/"+ this.state.result + ".png"} alt=""/>
-                            {/* TODO: change to this.props.item */}
-                            <h2> item name </h2>
+                            <h2> {this.props.item} </h2>
                         </div>)
             else 
                 return (<div className='image'>
