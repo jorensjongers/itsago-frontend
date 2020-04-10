@@ -1,6 +1,5 @@
 import React from 'react'
 import BackButton from './BackButton.jsx'
-import API_URL from './App.jsx'
 
 class SearchBar extends React.Component {
     state = {
@@ -14,7 +13,7 @@ class SearchBar extends React.Component {
   
     getInfo = () => {
       if (this.state.query && this.state.query.length > 0) {
-        fetch(API_URL + '/suggest?text=' + this.state.query)
+        fetch(window.API_URL + '/suggest?text=' + this.state.query)
         .then((response) => response.json())
         .then((names) => this.setState({results: names.slice(0,7)}))
       } else {

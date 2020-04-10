@@ -3,7 +3,6 @@ import BackButton from '../BackButton.jsx'
 import Allowed from '../../images/allowed.png'
 import Warning from '../../images/warning.png'
 import Prohibited from '../../images/prohibited.png'
-import API_URL from '../App.jsx'
 
 
 export class ResponseScreen extends Component {
@@ -13,18 +12,22 @@ export class ResponseScreen extends Component {
             result: '',
             text: '',
             info: '',
-            showInfo: false
+            showInfo: false,
+            loading: true
         }
         const that = this;
-        fetch(API_URL + '/searchbar?text=' + this.props.item)
+        console.log(API_URL + '/searchbar?text=' + this.props.item)
+        fetch(window.API_URL + '/searchbar?text=' + this.props.item)
         .then(response => response.json())
         .then(data => that.setState({result: data[0].classification.toLowerCase(), 
-                                             text: data[0].info})); 
+                                     text: data[0].info,
+                                     loading: false})); 
     }
 
     render() {
 
         const getIcon = (name) => {
+            console.log(name)
             if (name == 'allowed')
                 return Allowed
             else if (name == 'warning')
@@ -43,7 +46,7 @@ export class ResponseScreen extends Component {
         const pictureOrName = () => {
             if (this.props.path == null)
                 return (<div className='nopicture'>
-                            <img className='icon' src={"src/images/"+ this.state.result + ".png"} alt=""/>
+                            <img className='icon' src={getIcon(this.state.result)} alt=""/>
                             <h2> {this.props.item} </h2>
                         </div>)
             else 
@@ -84,13 +87,20 @@ export class ResponseScreen extends Component {
                 )
             }
         }
-        return ( 
-            <div className='response'>
-              {content()}
-              <button onClick={() => this.props.changeState('input')}> Check another item </button>
-              <h6 className='link'> Send us your feedback </h6>
-            </div>
-          )
+
+        if (this.state.loading) {
+            return (<div> 
+                Processing
+            </div>)
+        } else {
+            return ( 
+                <div className='response'>
+                {content()}
+                <button onClick={() => this.props.changeState('input')}> Check another item </button>
+                <h6 className='link'> Send us your feedback </h6>
+                </div>
+            )
+        }
     }
 }
 

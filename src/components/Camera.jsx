@@ -2,7 +2,6 @@ import React from 'react'
 import Camera, { FACING_MODES } from 'react-html5-camera-photo';
 import BackButton from './BackButton.jsx'
 import 'react-html5-camera-photo/build/css/index.css';
-import API_URL from './App.jsx'
 
 
 class CameraScreen extends React.Component {
@@ -19,7 +18,7 @@ class CameraScreen extends React.Component {
     uploadImage = (picture) => {
       const formData = new FormData();
       formData.append("file", picture, "image.png");
-      fetch(API_URL + "/upload_image", {
+      fetch(window.API_URL + "/upload_image", {
         method: 'POST',
         body: formData
       })

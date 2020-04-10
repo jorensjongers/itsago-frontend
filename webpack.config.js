@@ -11,8 +11,8 @@ module.exports = {
       extensions: ['.js', '.jsx']
    },
    devServer: {
-      contentBase: './output',
-      publicPath: 'output/'
+      contentBase: './src',
+      publicPath: '/output'
    },
    module: {
       rules: [
