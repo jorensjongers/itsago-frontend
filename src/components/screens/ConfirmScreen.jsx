@@ -6,8 +6,17 @@ export class ConfirmScreen extends Component {
 
     constructor(props) {
         super(props)
+        console.log(this.props.items)
         this.state  = {
-            selectedItem: this.props.items[0].name
+            notFound: false,
+            selectedItem: []
+        }
+
+        if (this.props.items[0] == "nothing found") {
+            console.log(this.props.items)
+            this.state.notFound = true;
+        } else {
+            this.selectedItem = this.props.items[0].name
         }
     }
 
@@ -34,28 +43,37 @@ export class ConfirmScreen extends Component {
             return <ul className='list'>{options}</ul>
         }
 
-        return (
+        if (this.state.notFound) {
+            return ( 
             <div className='confirm'>
-                <BackButton back={() => this.props.changeState('camera')}/>
-                <h1> Your item </h1>
-                <img className='picture' src={this.props.path} />
-                {itemList()}
-                <button 
-                        className='again'
-                        onClick={() => {this.props.changeState('camera')}}>
-                  Not found? <br/>
-                  Try again
-                </button>
-                <button className='continue'
-                        onClick={() => {
-                        this.props.setItem(this.state.selectedItem); 
-                        this.props.changeState('response')}
-                    }> 
-                  Continue 
-                </button>
+                 <BackButton back={() => this.props.changeState('camera')}/>
+                 <h1> No object was detected </h1>
 
-            </div>
-        )
+            </div>)
+        } else {
+            return (
+                <div className='confirm'>
+                    <BackButton back={() => this.props.changeState('camera')}/>
+                    <h1> Your item </h1>
+                    <img className='picture' src={this.props.path} />
+                    {itemList()}
+                    <button 
+                            className='again'
+                            onClick={() => {this.props.changeState('camera')}}>
+                    Not found? <br/>
+                    Try again
+                    </button>
+                    <button className='continue'
+                            onClick={() => {
+                            this.props.setItem(this.state.selectedItem); 
+                            this.props.changeState('response')}
+                        }> 
+                    Continue 
+                    </button>
+
+                </div>
+            )
+        }
     }
 }
 
