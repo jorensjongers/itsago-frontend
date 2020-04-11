@@ -48,7 +48,12 @@ export class ConfirmScreen extends Component {
             <div className='confirm'>
                  <BackButton back={() => this.props.changeState('camera')}/>
                  <h1> No object was detected </h1>
-
+                 <button
+                            onClick={() => {
+                            this.props.changeState('camera')}
+                        }> 
+                    Try again
+                    </button>
             </div>)
         } else {
             return (

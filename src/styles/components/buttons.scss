@@ -49,11 +49,6 @@ div.cam-button {
 }
 
 
-/* Different placement on confirm screen */
-.confirm > button {
-    bottom: 13vh;
-}
-
 .back-button > img {
     position: absolute;
     width: 18px;
@@ -98,16 +93,17 @@ div.cam-button {
 }
 
 .confirm > button {
-    width: 35vw;
     position: absolute;
     bottom: 40px;
 }
 
 .confirm > button.again {
+    width: 35vw;
     left: 10vw;
 }
 
 .confirm > button.continue {
+    width: 35vw;
     left: 55vw;
 }
 
