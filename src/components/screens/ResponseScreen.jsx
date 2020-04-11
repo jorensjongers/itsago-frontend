@@ -89,15 +89,22 @@ export class ResponseScreen extends Component {
         }
 
         if (this.state.loading) {
-            return (<div> 
-                Processing
+            return (<div className='response'> 
+                <BackButton back={() => {
+                            if (this.props.path == null)
+                                this.props.changeState('manual')
+                            else 
+                                this.props.changeState('confirm')}}/>
+                <h1> The object was not found in our database </h1>
+                <button onClick={() => this.props.changeState('input')}> Check another item </button>
+                <h6 className='link'> Send us your feedback </h6>
             </div>)
         } else {
             return ( 
                 <div className='response'>
-                {content()}
-                <button onClick={() => this.props.changeState('input')}> Check another item </button>
-                <h6 className='link'> Send us your feedback </h6>
+                    {content()}
+                    <button onClick={() => this.props.changeState('input')}> Check another item </button>
+                    <h6 className='link'> Send us your feedback </h6>
                 </div>
             )
         }
