@@ -1,11 +1,11 @@
 h1 {
     position: absolute;
     height: 123px;  
-    top: 125px;
+    top: 15%;
     left: 0px;
     right: 0px;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 5%;
+    margin-right: 5%;
 
     font-family: Ubuntu;
     font-style: normal;
@@ -18,10 +18,16 @@ h1 {
     color: #FFFFFF;
 }
 
+@media screen and (min-height: 700px) {
+    h1 {
+       font-size: 36px;
+    }
+}
+
 h2 {
     position: absolute;
-    top: 38vh;
-    height: 76px;
+    top: 38%;
+    height: 76%;
     left: 17px;
     right: 15px;
 
@@ -54,8 +60,8 @@ h5 {
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
-    left: 5vw;
-    right: 5vw;
+    left: 5%;
+    right: 5%;
 
 
     display: flex;
@@ -68,8 +74,8 @@ h5 {
 
 h6 {   
     text-align: center;
-    left: 5vw;
-    right: 5vw; 
+    left: 5%;
+    right: 5%; 
     font-family: 'ubuntu';
     font-weight: normal;
     font-size: 15px;
@@ -96,35 +102,10 @@ h1.explanation {
     color: #FFFFFF;
 }
 
-h2.placeholder {
-    font-family: 'Courier New', Courier, monospace;
-    position: absolute;
-    left: 5vw;
-    right: 5vw; 
-    bottom: 30vh;
-    margin-left: 5vw;
-    margin-right: 5vw;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 34px;
-    line-height: 41px;
-
-    text-align: center;
-    letter-spacing: 0.374px;
-
-    color: #FFFFFF;
-}
-
-div.result > h2.placeholder {
-    bottom: 60vh;
-}
-
 /* Make clickable text bold */
 h6.link {
     font-weight: bold; 
 }
-
 
 .input > h6 {
     position: absolute;
@@ -222,15 +203,17 @@ ul {
 }
 
 .terms > ul > li {
+    font-size: 15px;
     margin-top: 5px;
 }
 
 .instructions > h6 {
+    text-align: left;
     font-size: 20px;
     font-weight: bold;
     position: relative;
     top: 20px;
-    left: -40px
+    margin-left: 5%;
 
 }
 

@@ -14,7 +14,7 @@ export class InstructionScreen extends Component {
     render() {
         return (
             <div className='instructions'>
-                <h6> Use camera or gallery </h6>
+                <h6> Use camera </h6>
                 <ul>
                 <li>
                     <img src={CameraIcon}/> 

@@ -1,11 +1,13 @@
 /* standard button at bottom of screen */
 
 button {
+    position: absolute;
     border: none;
     padding: 0px;
     height: 56px;
-    left: 10vw;
-    width: 80vw;
+    left: 10%;
+    width: 80%;
+    bottom: 30px;
     background: #C4211C;
     border-radius: 14px;
     color: #FFFFFF;
@@ -17,15 +19,6 @@ button {
 
 }
 
-.welcome > button {
-    position: absolute;
-    bottom: 30px;
-}
-
-.terms > button {
-    position: absolute;
-    bottom: 5%;
-}
 
 .instructions > button {
     position: absolute;
@@ -82,6 +75,7 @@ div.cam-button {
 
 .home-choice {
     position: absolute;
+    width: 100%;
     bottom: 40px;
 }
 
@@ -98,13 +92,13 @@ div.cam-button {
 }
 
 .confirm > button.again {
-    width: 35vw;
-    left: 10vw;
+    width: 35%;
+    left: 10%;
 }
 
 .confirm > button.continue {
-    width: 35vw;
-    left: 55vw;
+    width: 35%;
+    left: 55%;
 }
 
 .response > button {
@@ -116,4 +110,5 @@ div.cam-button {
     position: absolute;
     bottom: 30px;
 }
+
 

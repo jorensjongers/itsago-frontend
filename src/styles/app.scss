@@ -18,6 +18,11 @@
 /* set background color for whole app */
 .app {
     background-color: #17405C;
+    position: relative;
     width: 100vw;
+    max-width: 400px;
+    max-height: 700px;
     height: 100vh;
+    margin: 0 auto;
 }
+
