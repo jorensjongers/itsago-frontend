@@ -10,6 +10,7 @@ class InputScreen extends React.Component {
       <div className='input'>
         <BackButton back={() => this.props.changeState('welcome')}/>
           <h1> Find out whether or not your item is allowed! </h1>
+          <h2> Scan your item with the camera or search manually.</h2>
           <div className='home-choice'>
             <button onClick={() => this.props.changeState('camera')}> 
                 <img className='cam-button' src={CameraIcon}/>
