@@ -18,6 +18,7 @@ export class ResponseScreen extends Component {
             loading: true,
             nothingFound: false,
             feedbackSent: false,
+            item: this.props.item 
         }
         const that = this;
         fetch(window.API_URL + '/searchbar?text=' + this.props.item)
@@ -42,6 +43,10 @@ export class ResponseScreen extends Component {
         this.setState({feedbackSent: true});
     }
 
+    handleChange = (event) => {
+        this.setState({item: event.target.value});
+    }
+
     render() {
 
         const itemInput = () => {
@@ -50,8 +55,10 @@ export class ResponseScreen extends Component {
             } else {
                 return (
                     <div className='response'>
-                        <input type="text" ref={input => this.item = input} />
-                        <button className='send' onClick={() => this.sendItem(this.item.value)}> Send </button>  
+                        <input type="text" 
+                               value={this.state.item || ''}
+                               onChange={this.handleChange}/>
+                        <button className='send' onClick={() => this.sendItem(this.state.item)}> Send </button>  
                     </div>
                 )
             }
@@ -133,7 +140,7 @@ export class ResponseScreen extends Component {
                                 this.props.changeState('manual')
                             else 
                                 this.props.changeState('confirm')}}/>
-                <h1> Item not found </h1>
+                <h1> Item not found in our database.</h1>
                 <h2> Please enter the item you wanted to check below, we'll add it in the future. </h2>
                 {itemInput()}
                 <button onClick={() => this.props.changeState('input')}> Check another item </button>
