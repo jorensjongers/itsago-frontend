@@ -27,7 +27,7 @@ export class ConfirmScreen extends Component {
 
     render() {
         const itemList = () => {
-            const keys = this.props.items;
+            let keys = this.props.items;
             if (keys.length > 3)
                 keys = keys.slice(0,3);
 
