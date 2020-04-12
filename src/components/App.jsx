@@ -62,7 +62,7 @@ class App extends React.Component {
           case 'confirm':
             return  <ConfirmScreen 
                       path={this.state.picturePath}
-                      setItem={(str) => {this.setState({item: str}), console.log('here' + str)}} 
+                      setItem={(str) => this.setState({item: str})} 
                       changeState={(next) => this.changeState(next)}
                       items={this.state.items}
                     />;
