@@ -13,13 +13,22 @@ form.autocomplete {
   position: relative;
   left: 10%;
   width: 80%;
+}
+
+.response > input {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 50%;
+}
+
+input {
   border-radius: 14pt;
   border: none;
   font-family: 'ubuntu';
   font-weight: bold;
   font-size: 15pt;
   padding: 5px 20px;
-  
 }
 
 /* suggestion list */
