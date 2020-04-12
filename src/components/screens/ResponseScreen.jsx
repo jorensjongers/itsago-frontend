@@ -13,19 +13,28 @@ export class ResponseScreen extends Component {
             text: '',
             info: '',
             showInfo: false,
-            loading: true
+            loading: true,
+            nothingFound: false
         }
         const that = this;
-        console.log(API_URL + '/searchbar?text=' + this.props.item)
         fetch(window.API_URL + '/searchbar?text=' + this.props.item)
         .then(response => response.json())
-        .then(data => that.setState({result: data[0].classification.toLowerCase(), 
-                                     text: data[0].info,
-                                     loading: false})); 
+        .then(data => {
+            if (data.length > 0) {
+                that.setState({result: data[0].classification.toLowerCase(), 
+                                     text: data[0].text,
+                                     info: data[0].info,
+                                     loading: false});
+            } else {
+                that.setState({
+                    nothingFound: true,
+                    loading: false
+                });
+            }
+        })
     }
 
     render() {
-
         const getIcon = (name) => {
             console.log(name)
             if (name == 'allowed')
@@ -89,7 +98,15 @@ export class ResponseScreen extends Component {
         }
 
         if (this.state.loading) {
-            return (<div className='response'> 
+            return (
+                <div>
+                    <h1> Loading... </h1>
+                </div>
+            )
+            
+        } else {
+            if (this.state.nothingFound) {
+                return (<div className='response'> 
                 <BackButton back={() => {
                             if (this.props.path == null)
                                 this.props.changeState('manual')
@@ -99,14 +116,15 @@ export class ResponseScreen extends Component {
                 <button onClick={() => this.props.changeState('input')}> Check another item </button>
                 <h6 className='link'> Send us your feedback </h6>
             </div>)
-        } else {
-            return ( 
-                <div className='response'>
-                    {content()}
-                    <button onClick={() => this.props.changeState('input')}> Check another item </button>
-                    <h6 className='link'> Send us your feedback </h6>
-                </div>
-            )
+            } else {
+                return ( 
+                    <div className='response'>
+                        {content()}
+                        <button onClick={() => this.props.changeState('input')}> Check another item </button>
+                        <h6 className='link'> Send us your feedback </h6>
+                    </div>
+                )
+            }
         }
     }
 }
