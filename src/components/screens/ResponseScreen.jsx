@@ -166,6 +166,12 @@ class Feedback extends Component {
         this.setState({feedBackSent: true});
     }
 
+    sendNegativeFeedback = () => {
+        fetch(window.API_URL + "/feedback/sad");
+        this.setState({feedBackSent: true});
+        this.props.changeState('feedback');
+    }
+
     render() {
         if (this.state.feedBackSent) {
             return (
@@ -176,8 +182,8 @@ class Feedback extends Component {
         } else {
             return (
                 <div className='feedback'>
-                    <img id='happy' src={Happy} onClick={() => this.sendPositiveFeedback()}/>
-                    <img id='sad' src= {Sad} onClick={() => this.props.changeState('feedback')}/>
+                    <img id='happy' src={Happy} onClick={this.sendPositiveFeedback}/>
+                    <img id='sad' src= {Sad} onClick={this.sendNegativeFeedback}/>
                 </div>
             )
         }
