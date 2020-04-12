@@ -137,14 +137,14 @@ export class ResponseScreen extends Component {
                 <h2> Please enter the item you wanted to check below, we'll add it in the future. </h2>
                 {itemInput()}
                 <button onClick={() => this.props.changeState('input')}> Check another item </button>
-                <Feedback/>
+                <Feedback changeState={(next) => this.props.changeState(next)}/>
             </div>)
             } else {
                 return ( 
                     <div className='response'>
                         {content()}
                         <button onClick={() => this.props.changeState('input')}> Check another item </button>
-                        <Feedback/>
+                        <Feedback changeState={(next) => this.props.changeState(next)}/>
                     </div>
                 )
             }
