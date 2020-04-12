@@ -46,14 +46,21 @@ export class ConfirmScreen extends Component {
         if (this.state.notFound) {
             return ( 
             <div className='confirm'>
-                 <BackButton back={() => this.props.changeState('camera')}/>
-                 <h1> No object was detected </h1>
-                 <button
-                            onClick={() => {
-                            this.props.changeState('camera')}
-                        }> 
-                    Try again
-                    </button>
+                <BackButton back={() => this.props.changeState('camera')}/>
+                <h1> No object was detected. </h1>
+                <h2> Please try again, or enter item manually. </h2>
+                <button className='again'
+                        onClick={() => {
+                        this.props.changeState('camera')}
+                    }> 
+                Try again
+                </button>
+                <button className='continue'
+                        onClick={() => {
+                        this.props.changeState('manual')}
+                    }> 
+                Manual entry
+                </button>
             </div>)
         } else {
             return (
