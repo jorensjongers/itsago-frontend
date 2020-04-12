@@ -126,3 +126,18 @@ img.language-icon {
     transform: translate(-50%, 0);
     z-index: 1; 
 }
+
+
+.feedback > img {
+    position: absolute;
+    height: 5%;
+    bottom: 2.5%;
+}
+
+#happy {
+    left: 35%
+}
+
+#sad {
+    right: 35%
+}

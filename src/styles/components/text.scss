@@ -256,8 +256,8 @@ ul {
 
 a {
     text-align: center;
-    left: 5vw;
-    right: 5vw; 
+    left: 5%;
+    right: 5%; 
     font-family: 'ubuntu';
     font-weight: bold;
     font-size: 15px;
@@ -269,7 +269,7 @@ a {
 
 .nopicture > h2 {
     position: absolute;
-    top: 30vh;
+    top: 30%;
     font-size: 40px;
     z-index: 1;
     margin-left: auto;
@@ -278,15 +278,22 @@ a {
 
 .result > h5 {
     position: absolute;
-    top: 43vh;
+    top: 43%;
 }
 
 .result > h6 {
     position: absolute;
-    top: 60vh;
+    top: 60%;
 }
 
 .info > h6 {
     top: 30%
+}
+
+.feedback > h6 {
+    position: absolute;
+    bottom: 4%;
+    font-size: 20px;
+    font-weight: bold;
 }
 
