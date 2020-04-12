@@ -304,3 +304,13 @@ a {
     text-align: center; 
 }
 
+.feedback-screen > h1 {
+    font-size: 4vh;
+}
+
+@media screen and (min-height: 700px) {
+    .feedback-screen > h1 {
+       font-size: 30px;
+    }
+}
+
