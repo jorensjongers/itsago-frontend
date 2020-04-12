@@ -7,6 +7,7 @@ import ResponseScreen from './screens/ResponseScreen.jsx'
 import InstructionScreen from './screens/InstructionScreen.jsx'
 import SearchBar from './SearchBar.jsx';
 import CameraScreen from './Camera.jsx'
+import Feedback from './screens/Feedback.jsx'
 
 
 
@@ -79,6 +80,10 @@ class App extends React.Component {
             return <SearchBar
                       continue={() => this.changeState('response')}
                       setItem={(str) => this.setState({item: str})}
+                      changeState={(next) => this.changeState(next)}
+                    />
+          case 'feedback':
+            return <Feedback
                       changeState={(next) => this.changeState(next)}
                     />
         }

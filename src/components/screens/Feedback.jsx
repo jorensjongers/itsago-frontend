@@ -7,7 +7,7 @@ export class Feedback extends Component {
         super(props)
         this.state = {
             sent: false,
-            feedback = 'Please tell us whats wrong.'
+            feedback: 'Please tell us whats wrong.'
         }
     }
 
