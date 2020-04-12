@@ -27,7 +27,7 @@ h1 {
 h2 {
     position: absolute;
     top: 38%;
-    height: 76%;
+    height: 76px;
     left: 17px;
     right: 15px;
 
@@ -275,5 +275,9 @@ a {
 .result > h6 {
     position: absolute;
     top: 60vh;
+}
+
+.info > h6 {
+    top: 30%
 }
 
