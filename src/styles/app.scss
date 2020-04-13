@@ -29,5 +29,6 @@
 .screen {
   position: absolute;
   height: 90vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 500px;
 }
