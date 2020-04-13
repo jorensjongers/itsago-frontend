@@ -50,7 +50,9 @@ class SearchBar extends React.Component {
               select={(str) => this.continue(str)}
             />
           </form>
-          <button onClick={() => this.continue(this.state.query)}>Continue</button>
+          { (this.state.query == '')
+            ? <button className='disabled'> Continue </button>
+            : <button onClick={() => this.continue(this.state.query)}>Continue</button>}
         </div>
       );
     }
