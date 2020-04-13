@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import BackButton from '../BackButton.jsx'
+import Full from '../../images/star_full.png'
+import Empty from '../../images/star_empty.png'
 
 export class Feedback extends Component {
 
@@ -7,14 +9,15 @@ export class Feedback extends Component {
         super(props)
         this.state = {
             sent: false,
-            feedback: ''
+            feedback: '',
+            nbStars: 0
         }
     }
 
     sendFeedback = () => {
         fetch(window.API_URL + '/feedback', {
             method: 'POST',
-            body: 'feedback=' + this.state.feedback,
+            body: `nb_stars=${this.state.nbStars}&feedback=${this.state.feedback}`,
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
@@ -28,11 +31,26 @@ export class Feedback extends Component {
 
 
     render() {
+        const full = []
+        const empty = []
+
+        for (let i=0; i<5; i++) {
+            if (i <= this.state.nbStars) {
+                full.push(<img className='star' src={Full} onClick={() => this.setState({nbStars: i})}/>)
+            } else {
+                empty.push(<img className='star' src={Empty} onClick={() => this.setState({nbStars: i})}/>)
+            }
+        }
+
         return (
             <div className='feedback-screen'>
                 <BackButton back={() => this.props.changeState('response')}/>
-                <h1> We're sorry you've had a bad experience. </h1>
-                <h2> Please tell us what's wrong.</h2>
+                <h1> We're happy to hear from you! </h1>
+                <h2> Please rate your experience and leave your comments below.</h2>
+                <div className='stars'> 
+                        {full}
+                        {empty}
+                </div>
                 {this.state.sent 
                     ? <h3> Thank you! </h3>
                     : <textarea value={this.state.feedback} onChange={this.handleChange}/>}

@@ -16,7 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeView: 'welcome',
+      activeView: 'feedback',
       picturePath: null,
       items: null,
       item: ''

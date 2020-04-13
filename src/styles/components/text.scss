@@ -299,19 +299,20 @@ a {
 
 .feedback-screen > h3 {
     position: absolute;
-    top: 28%;
+    top: 60%;
     width: 100%;
     text-align: center; 
     line-height: 130%;
+    font-size: 20px;
 }
 
 .feedback-screen > h1 {
     font-size: 30px;
+    top: 10%;
 }
 
-@media screen and (min-height: 700px) {
-    .feedback-screen > h1 {
-       font-size: 30px;
-    }
+.feedback-screen > h2 {
+    top: 25%;
+    font-weight: normal;
 }
 
