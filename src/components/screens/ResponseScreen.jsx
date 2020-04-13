@@ -74,7 +74,7 @@ export class ResponseScreen extends Component {
         }
         
         const warning = () => {
-            if (this.state.result == 'warning')
+            if (this.state.result == 'warning' || this.state.result == 'prohibited')
                 return "Read more"
             else
                 return ''
