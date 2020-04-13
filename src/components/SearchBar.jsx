@@ -26,12 +26,17 @@ class SearchBar extends React.Component {
       this.props.setItem(str);
       this.props.continue();
     }
+
+    handleSubmit = (event) => {
+      event.preventDefault();
+      this.continue(this.state.query)
+    }
   
     render() {
       return (
         <div className='autocomplete'>
           <BackButton back={() => this.props.changeState('input')}/>
-          <form className='autocomplete'>
+          <form className='autocomplete' onSubmit={this.handleSubmit}>
             <input
               type="text" 
               name="searchbar"
