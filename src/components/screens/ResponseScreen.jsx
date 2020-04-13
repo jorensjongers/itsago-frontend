@@ -141,14 +141,14 @@ export class ResponseScreen extends Component {
                 <h1> Item not found in our database.</h1>
                 <h2> Please enter the item you wanted to check below, we'll add it in the future. </h2>
                 {itemInput()}
-                <h6 className='link' onClick={this.props.changeState('feedback')}> Send us your feedback </h6>
+                <h6 className='link' onClick={() => this.props.changeState('feedback')}> Send us your feedback </h6>
                 <button onClick={() => this.props.changeState('input')}> Check another item </button>
             </div>)
             } else {
                 return ( 
                     <div className='response'>
                         {content()}
-                        <h6 className='link' onClick={this.props.changeState('feedback')}> Send us your feedback </h6>
+                        <h6 className='link' onClick={() => this.props.changeState('feedback')}> Send us your feedback </h6>
                         <button onClick={() => this.props.changeState('input')}> Check another item </button>
                     </div>
                 )
