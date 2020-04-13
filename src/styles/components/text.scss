@@ -146,18 +146,18 @@ h1.prohibited{
 /* Different text positions on more info screen */
 .info > h5 {
     position: absolute;
-    top: 15vh;
+    top: 15%;
     font-weight: bold;
 }
 
 .info > h6 {
     position: absolute;
-    top: 35vh;
+    top: 25%;
 }
 
 .info > h6.link {
     position: absolute;
-    top: 55vh; 
+    top: 70%
 }
 
 label {
@@ -249,10 +249,6 @@ ul {
     margin-top: 7px;
 }
 
-.result > h6.link {
-    position: absolute;
-    bottom: 160px;
-}
 
 a {
     text-align: center;
@@ -278,16 +274,12 @@ a {
 
 .result > h5 {
     position: absolute;
-    top: 43%;
+    bottom: 28%;
 }
 
 .result > h6 {
     position: absolute;
-    top: 60%;
-}
-
-.info > h6 {
-    top: 30%
+    bottom: 24%;
 }
 
 .feedback > h6 {
