@@ -31,6 +31,10 @@ input {
   padding: 5px 20px;
 }
 
+.terms > input {
+  border-radius: 3pt;
+}
+
 /* suggestion list */
 .autocomplete > .list {
   position: relative;
