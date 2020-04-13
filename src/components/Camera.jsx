@@ -6,6 +6,13 @@ import 'react-html5-camera-photo/build/css/index.css';
 
 class CameraScreen extends React.Component {
 
+    constructor(props) {
+      super(props);
+      this.state = {
+        error: false,
+      }
+    }
+
     takePicture = (dataUri)  => {
       this.props.setPath(dataUri)
       fetch(dataUri)
@@ -29,7 +36,21 @@ class CameraScreen extends React.Component {
       });
     }
 
+    handleCameraError = (error) => {
+      this.setState({error: true});
+    }
+
     render() {
+        if (this.state.error) {
+          return (
+            <div>
+              <BackButton back={() => this.props.changeState('input')}/>
+              <h1> Oops... </h1>
+              <h2> Seems like something went wrong, please check your camera permissions. </h2>
+              <button onClick={() => this.props.changeState('input')}> Go back </button> 
+            </div>
+          )
+        }
         return (
           <div>
             <BackButton back={() => this.props.changeState('input')}/>
@@ -38,6 +59,7 @@ class CameraScreen extends React.Component {
                 onTakePhoto = {(dataUri) => {this.takePicture(dataUri);}}
                 idealFacingMode = {FACING_MODES.ENVIRONMENT}
                 isImageMirror = {false}
+                onCameraError = { (error) => {this.handleCameraError(error); } }
               />
             </div>
           </div>
