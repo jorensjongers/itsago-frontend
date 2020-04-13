@@ -3,8 +3,8 @@ import BackButton from '../BackButton.jsx'
 import Allowed from '../../images/allowed.png'
 import Warning from '../../images/warning.png'
 import Prohibited from '../../images/prohibited.png'
-import Happy from '../../images/happy.png'
-import Sad from '../../images/sad.png'
+import Full from '../../images/star_full.png'
+import Empty from '../../images/star_empty.png'
 
 
 export class ResponseScreen extends Component {
@@ -16,7 +16,7 @@ export class ResponseScreen extends Component {
             info: '',
             showInfo: false,
             loading: true,
-            nothingFound: false,
+            nothingFound: true,
             feedbackSent: false,
             item: this.props.item 
         }
@@ -143,59 +143,20 @@ export class ResponseScreen extends Component {
                 <h1> Item not found in our database.</h1>
                 <h2> Please enter the item you wanted to check below, we'll add it in the future. </h2>
                 {itemInput()}
+                <h6 className='link' onClick={this.props.changeState('feedback')}> Send us your feedback </h6>
                 <button onClick={() => this.props.changeState('input')}> Check another item </button>
-                <Feedback changeState={(next) => this.props.changeState(next)}/>
             </div>)
             } else {
                 return ( 
                     <div className='response'>
                         {content()}
+                        <h6 className='link' onClick={this.props.changeState('feedback')}> Send us your feedback </h6>
                         <button onClick={() => this.props.changeState('input')}> Check another item </button>
-                        <Feedback changeState={(next) => this.props.changeState(next)}/>
                     </div>
                 )
             }
         }
     }
 }
-
-
-class Feedback extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            feedBackSent: false
-        };
-    }
-
-    sendPositiveFeedback = () => {
-        fetch(window.API_URL + "/feedback/happy");
-        this.setState({feedBackSent: true});
-    }
-
-    sendNegativeFeedback = () => {
-        fetch(window.API_URL + "/feedback/sad");
-        this.setState({feedBackSent: true});
-        this.props.changeState('feedback');
-    }
-
-    render() {
-        if (this.state.feedBackSent) {
-            return (
-                <div className='feedback'>
-                    <h6> Thank you! </h6>
-                </div>
-            )
-        } else {
-            return (
-                <div className='feedback'>
-                    <img id='happy' src={Happy} onClick={this.sendPositiveFeedback}/>
-                    <img id='sad' src= {Sad} onClick={this.sendNegativeFeedback}/>
-                </div>
-            )
-        }
-    }
-}
-
 
 export default ResponseScreen
