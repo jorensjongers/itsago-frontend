@@ -14,7 +14,7 @@ export class ResponseScreen extends Component {
             info: '',
             showInfo: false,
             loading: true,
-            nothingFound: true,
+            nothingFound: false,
             feedbackSent: false,
             item: this.props.item 
         }
