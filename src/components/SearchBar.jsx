@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
       if (this.state.query && this.state.query.length > 0) {
         fetch(window.API_URL + '/suggest?text=' + this.state.query)
         .then((response) => response.json())
-        .then((names) => this.setState({results: names.slice(0,7)}))
+        .then((names) => this.setState({results: names.slice(0,6)}))
       } else {
         this.setState({results: []});
       }
