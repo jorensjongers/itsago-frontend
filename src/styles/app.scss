@@ -20,8 +20,14 @@
     background-color: #17405C;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100.1vh;
     max-width: 500px;
     max-height: 800px;
     margin: 0 auto;
+}
+
+.screen {
+  position: absolute;
+  height: 90vh;
+  width: 100vw;
 }
