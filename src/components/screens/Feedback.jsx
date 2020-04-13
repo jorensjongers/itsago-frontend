@@ -35,10 +35,10 @@ export class Feedback extends Component {
         const empty = []
 
         for (let i=0; i<5; i++) {
-            if (i <= this.state.nbStars) {
-                full.push(<img className='star' src={Full} onClick={() => this.setState({nbStars: i})}/>)
+            if (i < this.state.nbStars) {
+                full.push(<img className='star' src={Full} onClick={() => this.setState({nbStars: i+1})}/>)
             } else {
-                empty.push(<img className='star' src={Empty} onClick={() => this.setState({nbStars: i})}/>)
+                empty.push(<img className='star' src={Empty} onClick={() => this.setState({nbStars: i+1})}/>)
             }
         }
 
