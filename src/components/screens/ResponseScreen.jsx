@@ -3,8 +3,6 @@ import BackButton from '../BackButton.jsx'
 import Allowed from '../../images/allowed.png'
 import Warning from '../../images/warning.png'
 import Prohibited from '../../images/prohibited.png'
-import Full from '../../images/star_full.png'
-import Empty from '../../images/star_empty.png'
 
 
 export class ResponseScreen extends Component {
