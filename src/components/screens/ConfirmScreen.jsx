@@ -9,7 +9,7 @@ export class ConfirmScreen extends Component {
         console.log(this.props.items)
         this.state  = {
             notFound: false,
-            selectedItem: []
+            selectedItem: ''
         }
 
         if (this.props.items[0] == "nothing found") {
@@ -66,7 +66,7 @@ export class ConfirmScreen extends Component {
             return (
                 <div className='confirm'>
                     <BackButton back={() => this.props.changeState('camera')}/>
-                    <h1> Your item </h1>
+                    <h1> Select your item </h1>
                     <img className='picture' src={this.props.path} />
                     {itemList()}
                     <button 
@@ -75,13 +75,17 @@ export class ConfirmScreen extends Component {
                     Not found? <br/>
                     Try again
                     </button>
-                    <button className='continue'
-                            onClick={() => {
-                            this.props.setItem(this.state.selectedItem); 
-                            this.props.changeState('response')}
-                        }> 
+                    { (this.state.selectedItem != '')
+                    ? <button className='continue'
+                                onClick={() => {
+                                this.props.setItem(this.state.selectedItem); 
+                                this.props.changeState('response')}
+                            }> 
+                        Continue 
+                        </button>
+                    : <button id='disabled' className='continue'> 
                     Continue 
-                    </button>
+                    </button> }
 
                 </div>
             )
