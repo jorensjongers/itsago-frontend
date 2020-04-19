@@ -48,13 +48,19 @@ input {
 
 /* suggestion items */
 .autocomplete-items {
-  width: 80%;
+  width: 100%;
   background-color: transparent;
+  border-radius: 14pt;
   padding: 8px 20px;
   font-family: 'ubuntu';
-  color: black;
+  color: grey;
   font-size: 15pt;
   font-weight: bold;
+}
+
+#selected.autocomplete-items {
+  //background-color: rgb(81, 81, 255);
+  color: black;
 }
 
 .confirm > .list {
