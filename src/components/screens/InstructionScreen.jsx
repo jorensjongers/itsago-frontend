@@ -14,7 +14,7 @@ export class InstructionScreen extends Component {
     render() {
         return (
             <div className='instructions'>
-                <h6> Use camera </h6>
+                <h6> Camera </h6>
                 <ul>
                 <li>
                     <img src={CameraIcon}/> 
@@ -33,7 +33,7 @@ export class InstructionScreen extends Component {
                             Allowed 
                         </li>
                         <li> 
-                            <img src={Warning} alt=""/>
+                            <img className='instr-warning' src={Warning} alt=""/>
                             Warning 
                         </li>
                         <li> 
@@ -43,7 +43,7 @@ export class InstructionScreen extends Component {
                     </ul>
                 </li>
                 </ul>
-                <h6> Use manual search </h6>
+                <h6> Manual search </h6>
                 <ul>
                 <li> 
                     <img src={MagnifyingGlass} alt=""/>
@@ -58,7 +58,7 @@ export class InstructionScreen extends Component {
                             Allowed 
                         </li>
                         <li> 
-                            <img src={Warning} alt=""/>
+                            <img className='instr-warning' src={Warning} alt=""/>
                             Warning 
                         </li>
                         <li> 
