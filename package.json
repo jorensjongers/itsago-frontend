@@ -40,6 +40,7 @@
     "bulma": "^0.8.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-ga": "^2.7.0",
     "react-html5-camera-photo": "^1.5.4",
     "reactjs-popup": "^1.5.0",
     "url-loader": "^4.0.0"

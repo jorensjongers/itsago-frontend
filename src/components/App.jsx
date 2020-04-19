@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import WelcomeScreen from './screens/WelcomeScreen.jsx'
 import InputScreen from './screens/InputScreen.jsx'
 import TermsConditionsScreen from './screens/TermsConditionsScreen.jsx';
@@ -10,7 +11,10 @@ import CameraScreen from './Camera.jsx'
 import Feedback from './screens/Feedback.jsx'
 
 
-
+function initializeReactGA() {
+  ReactGA.initialize('UA-163991824-1');
+  ReactGA.pageview('/homepage');
+}
 
 class App extends React.Component {
   constructor(props) {
