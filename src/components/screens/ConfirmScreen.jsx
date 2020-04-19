@@ -30,6 +30,10 @@ export class ConfirmScreen extends Component {
             let keys = this.props.items;
             if (keys.length > 3)
                 keys = keys.slice(0,3);
+            
+            if (keys.length == 1) {
+                this.setState({selectItem: keys[1].name})
+            }
 
             const options = keys.map(k => (
                 <li key={k.name}
@@ -65,7 +69,10 @@ export class ConfirmScreen extends Component {
             return (
                 <div className='confirm'>
                     <BackButton back={() => this.props.changeState('camera')}/>
-                    <h1> Select your item </h1>
+                    { this.props.items.length == 1 
+                        ? <h1> Confirm your item </h1>
+                        : <h1> Select your item </h1> 
+                    }
                     <img className='picture' src={this.props.path} />
                     {itemList()}
                     <button 
@@ -80,7 +87,10 @@ export class ConfirmScreen extends Component {
                                 this.props.setItem(this.state.selectedItem); 
                                 this.props.changeState('response')}
                             }> 
-                        Continue 
+                        { this.props.items.length == 1 
+                            ? 'Confirm'
+                            : 'Continue'
+                        }
                         </button>
                     : <button id='disabled' className='continue'> 
                     Continue 
