@@ -46,7 +46,9 @@ class CameraScreen extends React.Component {
             <div>
               <BackButton back={() => this.props.changeState('input')}/>
               <h1> Oops... </h1>
-              <h2> Seems like something went wrong, please check your camera permissions. </h2>
+              <h2> Seems like something went wrong. <br/> 
+                   Try opening this page in your default device browser
+                   or check your camera permissions. </h2>
               <button onClick={() => this.props.changeState('input')}> Go back </button> 
             </div>
           )
