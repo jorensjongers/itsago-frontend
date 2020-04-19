@@ -77,9 +77,9 @@ export class ConfirmScreen extends Component {
                     {itemList()}
                     <button 
                             className='again'
-                            onClick={() => {this.props.changeState('camera')}}>
+                            onClick={() => {this.props.changeState('manual')}}>
                     Not found? <br/>
-                    Try again
+                    Manual search
                     </button>
                     { (this.state.selectedItem != '')
                     ? <button className='continue'
