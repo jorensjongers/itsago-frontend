@@ -53,10 +53,16 @@ input {
   border-radius: 14pt;
   padding: 8px 20px;
   font-family: 'ubuntu';
-  color: grey;
+  color:black;
   font-size: 15pt;
   font-weight: bold;
 }
+
+.confirm > .list >  .autocomplete-items {
+  color: grey;
+}
+
+
 
 #selected.autocomplete-items {
   //background-color: rgb(81, 81, 255);
