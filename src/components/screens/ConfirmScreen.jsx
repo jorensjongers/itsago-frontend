@@ -34,10 +34,9 @@ export class ConfirmScreen extends Component {
             const options = keys.map(k => (
                 <li key={k.name}
                     className='autocomplete-items'
+                    id={k.name == this.state.selectedItem ? 'selected' : ''}
                     onClick={() => this.selectItem(k.name)}>  
                   {k.name} 
-                  {k.name == this.state.selectedItem &&
-                    <img className='checkmark' src={CheckMark} />}
                 </li>
             ));
             return <ul className='list'>{options}</ul>
