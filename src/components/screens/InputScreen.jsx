@@ -14,7 +14,7 @@ class InputScreen extends React.Component {
           <div className='home-choice'>
             <button onClick={() => this.props.changeState('camera')}> 
                 <img className='cam-button' src={CameraIcon}/>
-                Scan
+                Camera
             </button>
             <button onClick={() => this.props.changeState('manual')}> 
                 <img className='cam-button' src={MagnifyingGlass} alt=""/>
