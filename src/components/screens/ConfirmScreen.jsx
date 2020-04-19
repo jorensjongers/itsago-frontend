@@ -16,7 +16,7 @@ export class ConfirmScreen extends Component {
             console.log(this.props.items)
             this.state.notFound = true;
         } else {
-            this.selectedItem = this.props.items[0].name
+            this.state.selectedItem = this.props.items[0].name
         }
     }
 
@@ -30,10 +30,6 @@ export class ConfirmScreen extends Component {
             let keys = this.props.items;
             if (keys.length > 3)
                 keys = keys.slice(0,3);
-            
-            if (keys.length == 1) {
-                this.setState({selectItem: keys[1].name})
-            }
 
             const options = keys.map(k => (
                 <li key={k.name}
