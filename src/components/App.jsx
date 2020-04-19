@@ -92,6 +92,7 @@ class App extends React.Component {
                     />
         }
     }
+    initializeReactGA()
     return (
         <div className='screen'>
           {content()}

@@ -28,7 +28,7 @@ export class WelcomeScreen extends Component {
             <div className='welcome'>
                 <img className='bac-logo' src={BacLogo}/>
                 <img className='language-icon' src={LanguageIcon}/>
-                <h1> Brussels Airport Hand Baggage Check - test 2</h1>
+                <h1> Brussels Airport Hand Baggage Check</h1>
                 <h2> Developed by </h2>
                 <img className='itsago' src={Itsago}/>
                 <label className='terms' htmlFor="terms">
