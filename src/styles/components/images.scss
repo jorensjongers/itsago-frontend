@@ -20,7 +20,7 @@ img.cam-button {
     position: absolute;
     display: block;
     max-height: 30px;
-    margin-left: 60%;
+    margin-left: 65%;
     margin-top: -4px;
 }
 
@@ -79,12 +79,12 @@ img.language-icon {
 }
 
 .instructions > ul > li > ul > li > img {
-    max-height: 20px;
+    max-height: 15px;
     padding-right: 10px;
 }
 
 .instructions > ul > li > img {
-    max-height: 20px;
+    max-height: 15px;
     padding-right: 10px;
 }
 
@@ -142,4 +142,8 @@ img.language-icon {
     height: 30px;
     margin-left: 1.5%;
     margin-right: 1.5%;
+}
+
+.instr-warning {
+    margin-right: 7px;
 }

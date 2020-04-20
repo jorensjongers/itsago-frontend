@@ -14,14 +14,14 @@ class InputScreen extends React.Component {
           <div className='home-choice'>
             <button onClick={() => this.props.changeState('camera')}> 
                 <img className='cam-button' src={CameraIcon}/>
-                Scan
+                Camera
             </button>
             <button onClick={() => this.props.changeState('manual')}> 
                 <img className='cam-button' src={MagnifyingGlass} alt=""/>
                 Search
             </button>
           </div>
-          <h6 className='link' onClick={() => this.props.changeState('instructions')}> Instructions </h6>
+          <h6 className='link' onClick={() => this.props.changeState('instructions')}> <u>Instructions</u> </h6>
       </div>
     )
   }

@@ -16,7 +16,7 @@ export class ConfirmScreen extends Component {
             console.log(this.props.items)
             this.state.notFound = true;
         } else {
-            this.selectedItem = this.props.items[0].name
+            this.state.selectedItem = this.props.items[0].name
         }
     }
 
@@ -34,10 +34,9 @@ export class ConfirmScreen extends Component {
             const options = keys.map(k => (
                 <li key={k.name}
                     className='autocomplete-items'
+                    id={k.name == this.state.selectedItem ? 'selected' : ''}
                     onClick={() => this.selectItem(k.name)}>  
                   {k.name} 
-                  {k.name == this.state.selectedItem &&
-                    <img className='checkmark' src={CheckMark} />}
                 </li>
             ));
             return <ul className='list'>{options}</ul>
@@ -66,14 +65,17 @@ export class ConfirmScreen extends Component {
             return (
                 <div className='confirm'>
                     <BackButton back={() => this.props.changeState('camera')}/>
-                    <h1> Select your item </h1>
+                    { this.props.items.length == 1 
+                        ? <h1> Confirm your item </h1>
+                        : <h1> Select your item </h1> 
+                    }
                     <img className='picture' src={this.props.path} />
                     {itemList()}
                     <button 
                             className='again'
-                            onClick={() => {this.props.changeState('camera')}}>
+                            onClick={() => {this.props.changeState('manual')}}>
                     Not found? <br/>
-                    Try again
+                    Manual search
                     </button>
                     { (this.state.selectedItem != '')
                     ? <button className='continue'
@@ -81,7 +83,10 @@ export class ConfirmScreen extends Component {
                                 this.props.setItem(this.state.selectedItem); 
                                 this.props.changeState('response')}
                             }> 
-                        Continue 
+                        { this.props.items.length == 1 
+                            ? 'Confirm'
+                            : 'Continue'
+                        }
                         </button>
                     : <button id='disabled' className='continue'> 
                     Continue 
