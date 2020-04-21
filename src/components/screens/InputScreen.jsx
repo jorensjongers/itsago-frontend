@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga';
 import BackButton from '../BackButton.jsx'
 import CameraIcon from '../../images/camera_icon.png'
 import MagnifyingGlass from '../../images/magnifying_glass.png'

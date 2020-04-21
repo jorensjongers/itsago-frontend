@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactGA from 'react-ga';
 import BackButton from '../BackButton.jsx'
 import CheckMark from '../../images/checkmark.png'
 
