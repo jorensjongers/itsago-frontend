@@ -6,6 +6,23 @@ import Prohibited from '../../images/prohibited.png'
 
 
 export class ResponseScreen extends Component {
+
+    selectButton = (action, newState) => {
+        ReactGA.event({
+          category: 'Button',
+          action: action
+        })
+        this.props.changeState(newState)
+      }
+
+    clickLink = () => {
+        ReactGA.event({
+            category: 'Link',
+            action: 'Navigate to BAC webpage'
+        })
+        return true
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -27,11 +44,19 @@ export class ResponseScreen extends Component {
                                      text: data[0].text,
                                      info: data[0].info,
                                      loading: false});
+                ReactGA.event({
+                    category: 'Success',
+                    action: 'Item was found!'
+                })
             } else {
                 that.setState({
                     nothingFound: true,
                     loading: false
                 });
+                ReactGA.event({
+                    category: 'Success',
+                    action: 'Item was not found!'
+                })
             }
         })
     }
@@ -102,7 +127,9 @@ export class ResponseScreen extends Component {
                         <h6 className='link'> 
                             Still not clear? <br/>
                             Find the full regulations &nbsp;
-                            <a href="https://www.brusselsairport.be/en/passengers/your-travel-planner/packing-your-bags/your-hand-baggage">here</a>
+                            <a 
+                            onClick={() => this.clickLink()}
+                            href="https://www.brusselsairport.be/en/passengers/your-travel-planner/packing-your-bags/your-hand-baggage">here</a>
                         </h6>
                     </div>
                 )
@@ -117,7 +144,12 @@ export class ResponseScreen extends Component {
                         <h1 className={this.state.result}> {this.state.result.replace(/^\w/, c => c.toUpperCase())} </h1>
                         {pictureOrName()}
                         <h5> {this.state.text} </h5>
-                        <h6 className='link' onClick={() => this.setState({showInfo: true})}> {warning()} </h6>
+                        <h6 className='link' onClick={() => {
+                            ReactGA.event({
+                                category: 'Button',
+                                action: 'Read more button selected'
+                            })
+                            this.setState({showInfo: true})}}> {warning()} </h6>
                     </div>
                 )
             }
@@ -141,15 +173,15 @@ export class ResponseScreen extends Component {
                 <h1> Item not found in our database.</h1>
                 <h2> Please enter the item you wanted to check below, we'll add it in the future. </h2>
                 {itemInput()}
-                <h6 className='link' onClick={() => this.props.changeState('feedback')}> Send us your feedback </h6>
-                <button onClick={() => this.props.changeState('input')}> Check another item </button>
+                <h6 className='link' onClick={() => this.selectButton('Feedback button selected', 'feedback')}> Send us your feedback </h6>
+                <button onClick={() => this.selectButton('Check another item button selected', 'input')}> Check another item </button>
             </div>)
             } else {
                 return ( 
                     <div className='response'>
                         {content()}
-                        <h6 className='link' onClick={() => this.props.changeState('feedback')}> Send us your feedback </h6>
-                        <button onClick={() => this.props.changeState('input')}> Check another item </button>
+                        <h6 className='link' onClick={() => this.selectButton('Feedback button selected', 'feedback')}> Send us your feedback </h6>
+                        <button onClick={() => this.selectButton('Check another item button selected', 'input')}> Check another item </button>
                     </div>
                 )
             }
