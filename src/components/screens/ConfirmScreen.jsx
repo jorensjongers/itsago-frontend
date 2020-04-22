@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
+import ReactGA from 'react-ga';
 import BackButton from '../BackButton.jsx'
 import CheckMark from '../../images/checkmark.png'
 
 export class ConfirmScreen extends Component {
+
+    selectButton = (action, newState) => {
+        ReactGA.event({
+          category: 'Button',
+          action: action
+        })
+        this.props.changeState(newState)
+      }
 
     constructor(props) {
         super(props)
@@ -73,7 +82,7 @@ export class ConfirmScreen extends Component {
                     {itemList()}
                     <button 
                             className='again'
-                            onClick={() => {this.props.changeState('manual')}}>
+                            onClick={() => this.selectButton('Not found button selected', 'manual')}>
                     Not found? <br/>
                     Manual search
                     </button>
@@ -81,7 +90,7 @@ export class ConfirmScreen extends Component {
                     ? <button className='continue'
                                 onClick={() => {
                                 this.props.setItem(this.state.selectedItem); 
-                                this.props.changeState('response')}
+                                this.selectButton('Continue button selected', 'response')}
                             }> 
                         { this.props.items.length == 1 
                             ? 'Confirm'
