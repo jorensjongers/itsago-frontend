@@ -103,12 +103,17 @@ img.language-icon {
     transform: translate(-50%, 0)
 }
 
+#allowed.image {
+    top: 25%;
+}
+
 .image > .icon {
     max-height: 40%;
     position: absolute;
     z-index: 1; 
     right: 0px;
 }
+
 
 .image > .picture {
     height: 150px;
@@ -117,6 +122,12 @@ img.language-icon {
     top: 40px;
     align-self: center;
 }
+
+#allowed.image > .picture {
+    height: 200px;
+}
+
+
 
 .nopicture > .icon {
     max-height: 80px;

@@ -123,7 +123,7 @@ h6.link {
 
 
 h1.allowed {
-    top: 2%;
+    top: 15%;
     color: rgb(47, 173, 92);
     width: 60%;
     transform: translate(25%, 0);
@@ -315,10 +315,11 @@ a {
 }
 
 .confirm > h6 {
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
     position: absolute;
     text-align: left;
     top: 20.5px;
-    left: 33px;
+    left: 30px;
 }
 

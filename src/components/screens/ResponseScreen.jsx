@@ -111,7 +111,7 @@ export class ResponseScreen extends Component {
                             <h2> {this.props.item} </h2>
                         </div>)
             else 
-                return (<div className='image'>
+                return (<div className='image' id={this.state.result}>
                             <img className='icon' src={getIcon(this.state.result)} />
                             <img className='picture' src={this.props.path}/>
                         </div>)
