@@ -106,7 +106,7 @@ export class ResponseScreen extends Component {
 
         const pictureOrName = () => {
             if (this.props.path == null)
-                return (<div className='nopicture'>
+                return (<div className='nopicture' id={this.state.result}>
                             <img className='icon' src={getIcon(this.state.result)} alt=""/>
                             <h2> {this.props.item} </h2>
                         </div>)
