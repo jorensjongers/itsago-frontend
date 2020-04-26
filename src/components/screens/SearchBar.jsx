@@ -1,5 +1,5 @@
 import React from 'react'
-import BackButton from './BackButton.jsx'
+import BackButton from '../BackButton.jsx'
 
 class SearchBar extends React.Component {
     state = {
