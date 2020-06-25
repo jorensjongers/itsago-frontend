@@ -74,6 +74,7 @@ export class ConfirmScreen extends Component {
             return (
                 <div className='confirm'>
                     <BackButton back={() => this.props.changeState('camera')}/>
+                    <h6 onClick={() => this.props.changeState('camera')}> Camera </h6>
                     { this.props.items.length == 1 
                         ? <h1> Confirm your item </h1>
                         : <h1> Select your item </h1> 

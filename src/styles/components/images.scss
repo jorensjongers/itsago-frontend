@@ -90,7 +90,7 @@ img.language-icon {
 
 .confirm > img {
     position: absolute;
-    top: 15%;
+    top: 24%;
     left: 50%;
     transform: translate(-50%, 0)
 }
@@ -103,12 +103,17 @@ img.language-icon {
     transform: translate(-50%, 0)
 }
 
+#allowed.image {
+    top: 25%;
+}
+
 .image > .icon {
     max-height: 40%;
     position: absolute;
     z-index: 1; 
     right: 0px;
 }
+
 
 .image > .picture {
     height: 150px;
@@ -118,6 +123,12 @@ img.language-icon {
     align-self: center;
 }
 
+#allowed.image > .picture {
+    height: 200px;
+}
+
+
+
 .nopicture > .icon {
     max-height: 80px;
     position: absolute;
@@ -125,6 +136,10 @@ img.language-icon {
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 1; 
+}
+
+#allowed.nopicture > .icon {
+    top: 25%
 }
 
 

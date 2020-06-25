@@ -1,6 +1,6 @@
 import React from 'react'
 import Camera, { FACING_MODES } from 'react-html5-camera-photo';
-import BackButton from './BackButton.jsx'
+import BackButton from '../BackButton.jsx'
 import 'react-html5-camera-photo/build/css/index.css';
 
 

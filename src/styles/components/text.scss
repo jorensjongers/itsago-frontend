@@ -123,14 +123,14 @@ h6.link {
 
 
 h1.allowed {
-    top: 5%;
+    top: 15%;
     color: rgb(47, 173, 92);
     width: 60%;
     transform: translate(25%, 0);
 }
 
 h1.warning {
-    top: 5%;
+    top: 2%;
     color: rgb(242, 101, 34);
     width: 60%;
     transform: translate(25%, 0);
@@ -138,7 +138,7 @@ h1.warning {
 }
 
 h1.prohibited{
-    top: 5%;
+    top: 2%;
     color:rgb(198, 28, 20);
     width: 60%;
     transform: translate(25%, 0);
@@ -146,7 +146,7 @@ h1.prohibited{
 
 .confirm > h1 {
     position: absolute;
-    top: 5vh;  
+    top: 12vh;  
 }
 
 /* Different text positions on more info screen */
@@ -312,5 +312,18 @@ a {
 .feedback-screen > h2 {
     top: 25%;
     font-weight: normal;
+}
+
+.confirm > h6 {
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    text-align: left;
+    top: 20.5px;
+    left: 30px;
+}
+
+#allowed.nopicture > h2 {
+    top: 45%;
 }
 

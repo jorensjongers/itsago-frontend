@@ -6,8 +6,8 @@ import TermsConditionsScreen from './screens/TermsConditionsScreen.jsx';
 import ConfirmScreen from './screens/ConfirmScreen.jsx'
 import ResponseScreen from './screens/ResponseScreen.jsx'
 import InstructionScreen from './screens/InstructionScreen.jsx'
-import SearchBar from './SearchBar.jsx';
-import CameraScreen from './Camera.jsx'
+import SearchBar from './screens/SearchBar.jsx';
+import CameraScreen from './screens/Camera.jsx'
 import Feedback from './screens/Feedback.jsx'
 
 
